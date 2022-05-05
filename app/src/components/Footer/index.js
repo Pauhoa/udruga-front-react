@@ -7,10 +7,10 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <p className="footer__copyright">Copyright {year}</p>
       <a href="#" className="footer__link">Mentions Légales</a>
       <a href="#" className="footer__link">Conditions générales d'utilisation</a>
       <a href="#" className="footer__link">Team</a>
+      <p className="footer__copyright">Copyright {year}</p>
     </footer>
   );
 }
