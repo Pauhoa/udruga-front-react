@@ -10,8 +10,11 @@
   height: 56px;
   align-items: center;
   color: white;
-  &__logo{
 
+  &__logo{
+    height: 56px;
+    width: 56px;
+    background: none;
   }
 
   &__button{
@@ -24,12 +27,11 @@
   }
 
   &__burger{
-    width: 2rem;
-    height: 2rem;
     border: none;
+    border-radius: 8px;
+    color:white;
+    font-weight: bold;
     background-color: vars.$fourth-color;
-    border-radius: 1rem;
-    color: white;
-    font-size: 1.3rem;
+    padding: 1em 2em;
   }
 }

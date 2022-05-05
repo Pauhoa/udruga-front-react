@@ -2,12 +2,13 @@
 
 // import : Local
 import './header.scss';
+import { ReactComponent as Logo } from '../../assets/udruga-logo.svg';
 
 function Header() {
   return (
     <header className="header">
-      <button type="button" className="header__burger">+</button>
-      <img src="https://www.flaticon.com/fr/icones-gratuites/association" alt="Udruga logo" className="header__logo" />
+      <button type="button" className="header__burger">Menu</button>
+      <Logo className="header__logo" />
       <button type="button" className="header__button">Se connecter</button>
     </header>
   );
