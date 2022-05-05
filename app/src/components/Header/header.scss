@@ -1,37 +1,41 @@
 @use 'src/styles/vars';
-@use 'sass:math';
 
 .header {
   display: flex;
   justify-content: space-between;
   padding: 1em;
-  background: linear-gradient(90deg, vars.$first-color, vars.$fourth-color );
-  border-radius: 8px 8px 0 8px;
-  height: 56px;
+  background: linear-gradient(90deg, vars.$first-color, vars.$second-color );
+  border-radius: 8px 8px 8px 0;
   align-items: center;
   color: white;
-
+  
   &__logo{
-    height: 56px;
-    width: 56px;
-    background: none;
+    height: 72px;
+    width: 72px;
+    transition: all 1.5s ease-in-out;
+    &:hover{
+      transform: rotate(-360deg);
+    }
   }
 
   &__button{
     border: none;
     border-radius: 8px;
     color:white;
-    font-weight: bold;
-    background-color: vars.$first-color;
     padding: 1em 2em;
-  }
+    @media screen and (min-width: 768px){
+      font-size: 125%;
+    }
+    &:hover{
+      text-decoration: underline;
+    }
 
-  &__burger{
-    border: none;
-    border-radius: 8px;
-    color:white;
-    font-weight: bold;
-    background-color: vars.$fourth-color;
-    padding: 1em 2em;
+    &--menu{
+      background-color: vars.$second-color;
+    }
+
+    &--connect{
+      background-color: vars.$first-color;
+    }
   }
 }
