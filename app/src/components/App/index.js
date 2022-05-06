@@ -7,6 +7,7 @@ import './app.scss';
 import Header from '../Header';
 import Footer from '../Footer';
 import Home from '../Home';
+import UserSettings from '../UserSettings';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<UserSettings />} />
       </Routes>
       <Footer />
     </div>
