@@ -19,7 +19,9 @@ function UserSettings() {
       <Login
         changeField={handleChangeField}
       />
-      <Signin />
+      <Signin
+        changeField={handleChangeField}
+      />
     </div>
   );
 }

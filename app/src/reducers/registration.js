@@ -1,7 +1,12 @@
 import { CHANGE_USER_FIELD } from '../actions/user';
 
 export const initialState = {
-
+  firstname: 'coco',
+  lastname: 'Louis',
+  email: 'coco@gmail.fr',
+  password: 'hello',
+  confirmedPassword: 'hello',
+  role: 'user',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -9,10 +14,7 @@ const reducer = (state = initialState, action = {}) => {
     case CHANGE_USER_FIELD:
       return {
         ...state,
-        login: {
-          ...state.login,
-          [action.name]: action.value,
-        },
+        [action.name]: action.value,
       };
     default:
       return state;
