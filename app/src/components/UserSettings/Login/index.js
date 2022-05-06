@@ -1,15 +1,17 @@
 import Proptypes from 'prop-types';
-
+import { useSelector } from 'react-redux';
 // styles
 import './login.scss';
 
 function Login({
-  name,
-  onChange,
+  changeField,
 }) {
   const handleChange = (evt) => {
-    onChange(evt.target.value, name);
+    changeField(evt.target.value, evt.target.name);
   };
+
+  const email = useSelector((state) => state.user.email);
+  const password = useSelector((state) => state.user.password);
 
   return (
     <form
@@ -17,17 +19,18 @@ function Login({
     >
       Se connecter
       <input
-        value="email"
+        value={email}
         type="email"
-        name={name}
+        name="email"
         placeholder="Votre email"
         onChange={handleChange}
       />
       <input
-        value="password"
+        value={password}
         type="password"
         name="password"
         placeholder="Votre mot de passe"
+        onChange={handleChange}
       />
       <button type="submit">Connexion</button>
     </form>
@@ -35,7 +38,6 @@ function Login({
 }
 
 Login.propTypes = {
-  name: Proptypes.string.isRequired,
-  onChange: Proptypes.func.isRequired,
+  changeField: Proptypes.func.isRequired,
 };
 export default Login;
