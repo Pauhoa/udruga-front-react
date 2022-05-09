@@ -8,6 +8,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Home from '../Home';
 import UserSettings from '../UserSettings';
+import Association from '../Association';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<UserSettings />} />
+        <Route path="/association" element={<Association />} />
       </Routes>
       <Footer />
     </div>

@@ -17,7 +17,7 @@ function Login({
     <form
       className="form form__login"
     >
-      Se connecter
+      Connectez-vous
       <input
         value={email}
         type="email"
@@ -32,7 +32,7 @@ function Login({
         placeholder="Votre mot de passe"
         onChange={handleChange}
       />
-      <button type="submit">Connexion</button>
+      <button type="submit">Se connecter</button>
     </form>
   );
 }

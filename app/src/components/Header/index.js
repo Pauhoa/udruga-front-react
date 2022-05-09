@@ -15,7 +15,7 @@ function Header() {
           type="button"
           className="header__button header__button--connect"
         >
-          Se connecter
+          Connexion
         </button>
       </Link>
     </header>
