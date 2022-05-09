@@ -31,6 +31,7 @@ function Signin({
         <option value="user">Adhérent</option>
         <option value="admin">Administrateur</option>
       </select>
+      <button type="submit">S'insrire</button>
     </form>
   );
 }
