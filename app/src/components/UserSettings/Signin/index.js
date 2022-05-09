@@ -3,7 +3,7 @@ import Proptypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
 // styles
-import './signin.scss';
+import '../userSettings.scss';
 
 function Signin({
   changeField,

@@ -1,7 +1,7 @@
 import Proptypes from 'prop-types';
 import { useSelector } from 'react-redux';
 // styles
-import './login.scss';
+import '../userSettings.scss';
 
 function Login({
   changeField,
@@ -15,7 +15,7 @@ function Login({
 
   return (
     <form
-      className="login__form"
+      className="form form__login"
     >
       Se connecter
       <input
