@@ -17,9 +17,11 @@ function UserSettings() {
   return (
     <div className="user__settings">
       <Login
+        className="user__settings--field"
         changeField={handleChangeField}
       />
       <Signin
+        className="user__settings--field"
         changeField={handleChangeField}
       />
     </div>
