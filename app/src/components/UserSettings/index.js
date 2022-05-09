@@ -1,5 +1,6 @@
 // import : npm
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 // import : Local
 import { changeUserField } from '../../actions/user';
 
@@ -24,6 +25,11 @@ function UserSettings() {
         className="user__settings--field"
         changeField={handleChangeField}
       />
+      <Link to="/">
+        <button type="button" className="button__home">
+          Retourner à l'accueil
+        </button>
+      </Link>
     </div>
   );
 }
