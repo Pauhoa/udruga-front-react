@@ -1,4 +1,4 @@
-import { CHANGE_USER_FIELD } from '../actions/user';
+import { CHANGE_LOGIN_FIELD } from '../actions/user';
 
 export const initialState = {
   email: 'jean@pipou.fr',
@@ -7,7 +7,7 @@ export const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case CHANGE_USER_FIELD:
+    case CHANGE_LOGIN_FIELD:
       return {
         ...state,
         [action.name]: action.value,

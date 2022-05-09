@@ -1,0 +1,86 @@
+@use 'src/styles/vars';
+
+.asso {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 1em 0;
+
+  p {
+    margin: 1em auto;
+    font-size: 1em;
+    text-align: justify;
+    width: 80%;
+  }
+
+  h2 {
+    color: vars.$first-color;
+    font-size: 3rem;
+  }
+
+  h3 {
+    color: vars.$first-color;
+    font-weight: bolder;
+    font-size: x-large;
+    margin: 0.5em;
+  }
+
+  &__events {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+
+    width: 80%;
+
+    &--card {
+      // box-shadow: 0 1.5em 2.5em -.5em rgba(#000000, .1);
+      box-shadow: 0px 16px 32px 2px rgb(#7090B0, 0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1em auto;
+      padding: 1em;
+      border-radius: 8px;
+      width:100%;
+      &:hover {
+        transform: scale(1.01);
+      }
+      transition: transform 0.2s ease-in-out;
+      @media screen and (min-width: 768px) {
+        display: flex;
+        width: 50%;
+        margin: 1em;
+      }
+
+      &__svg {
+        width: 80%;
+        height: 200px;
+
+        @media screen and (min-width: 768px) {
+          height: 400px;
+        }
+      }
+    }
+  }
+}
+
+.button__unsub {
+  color: white;
+  background-color: vars.$first-color;
+  padding: 1em 2em;
+  border-radius: 4px;
+  margin: 1em;
+  border: none;
+  font-family: 'Raleway';
+
+  &:hover {
+    background-color: #6d79fd;
+  }
+}

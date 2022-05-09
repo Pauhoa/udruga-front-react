@@ -1,7 +1,7 @@
 import Proptypes from 'prop-types';
 import { useSelector } from 'react-redux';
 // styles
-import './login.scss';
+import '../userSettings.scss';
 
 function Login({
   changeField,
@@ -15,9 +15,9 @@ function Login({
 
   return (
     <form
-      className="login__form"
+      className="form form__login"
     >
-      Se connecter
+      Connectez-vous
       <input
         value={email}
         type="email"
@@ -32,7 +32,7 @@ function Login({
         placeholder="Votre mot de passe"
         onChange={handleChange}
       />
-      <button type="submit">Connexion</button>
+      <button type="submit">Se connecter</button>
     </form>
   );
 }
