@@ -1,11 +1,14 @@
 // import npm
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 // styles
 import './navigation.scss';
 
 function Navigation() {
+  const isOpen = useSelector((state) => state.navigation.isOpen);
+
   return (
-    <nav className="navigation">
+    <nav className={isOpen ? 'navigation' : 'navigation-closed'}>
       <NavLink
         to="/"
         className={
