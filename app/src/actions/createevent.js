@@ -1,0 +1,9 @@
+// ACTION TYPE CHANGE_CREATEEVENT_FIELD
+export const CHANGE_CREATEEVENT_FIELD = 'CHANGE_CREATEEVENT_FIELD';
+
+// ACTION CREATOR CHANGE_CREATEEVENT_FIELD
+export const changeCreateEventField = (value, name) => ({
+  type: CHANGE_CREATEEVENT_FIELD,
+  value,
+  name,
+});

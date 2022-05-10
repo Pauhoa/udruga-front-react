@@ -10,6 +10,7 @@ import Footer from '../Footer';
 import Home from '../Home';
 import UserSettings from '../UserSettings';
 import Association from '../Association';
+import CreateEvent from '../CreateEvent';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<UserSettings />} />
         <Route path="/association" element={<Association />} />
+        <Route path="/createevent" element={<CreateEvent />} />
       </Routes>
       <Footer />
     </div>
