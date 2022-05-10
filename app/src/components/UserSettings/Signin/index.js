@@ -24,8 +24,8 @@ function Signin({
       <input type="text" name="firstName" placeholder="Votre prénom" onChange={handleChange} value={firstName} />
       <input type="text" name="lastName" placeholder="Votre nom" onChange={handleChange} value={lastName} />
       <input type="text" name="signinEmail" placeholder="Votre email" onChange={handleChange} value={email} />
-      <input type="text" name="signinPassword" placeholder="Votre mot de passe" onChange={handleChange} value={password} />
-      <input type="text" name="confirmedPassword" placeholder="Confirmation du mot de passe" onChange={handleChange} value={confirmedPassword} />
+      <input type="password" name="signinPassword" placeholder="Votre mot de passe" onChange={handleChange} value={password} />
+      <input type="password" name="confirmedPassword" placeholder="Confirmation du mot de passe" onChange={handleChange} value={confirmedPassword} />
       <label htmlFor="role_select">Choisissez un rôle</label>
       <select value={role} name="role" id="role_select" onChange={handleChange}>
         <option value="user">Adhérent</option>
