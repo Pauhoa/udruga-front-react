@@ -2,6 +2,7 @@
 
 .header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   padding: 1em;
   background: linear-gradient(90deg, vars.$first-color, vars.$second-color );
