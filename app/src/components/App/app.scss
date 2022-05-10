@@ -3,4 +3,6 @@
 .app { 
   padding: 4px;
   font-family: 'Raleway';
+  display: flex;
+  flex-direction: column;
 }

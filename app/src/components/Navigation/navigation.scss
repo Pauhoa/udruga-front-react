@@ -1,0 +1,35 @@
+@use 'src/styles/vars';
+
+.navigation{
+  background-color: rgba(vars.$footer-color, 0.9);
+  font-family: 'Raleway';
+  font-size: 135%;
+  color: white;
+  padding: 0.5em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  transition: transform 0.3s ease-in;
+  &-closed{
+    transform: translateX(-220px) scale(0);
+  }
+  @media screen and (min-width: 768px){
+    position: absolute;
+    top: 100px;
+    text-align: left;
+    height: calc(100vh - 100px);
+    &:hover{
+      background-color: vars.$footer-color;
+    }
+  }
+  &__link {
+    margin: 0.5em;
+    &:hover{
+      text-decoration: underline;   
+      }
+    &--active {
+      text-decoration: underline;
+    }
+  }
+}
