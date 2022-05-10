@@ -30,14 +30,17 @@
       margin-top: 1.5em;
       border: none;
       width: 90%;
-      padding: 0.5em 1.5em;
+      padding: 0.5em 1em;
       background-color: white;
-      border-radius: 4px;
+    }
+    input, select {
+      border-bottom: 1px solid vars.$first-color;
     }
     button {
       color: white;
       background-color: vars.$first-color;
       width: auto;
+      border-radius: 4px;
       &:hover{
         background-color: #6d79fd;
       }
