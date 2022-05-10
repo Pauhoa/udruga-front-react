@@ -5,6 +5,7 @@ import './app.scss';
 
 // import : Components
 import Header from '../Header';
+import Navigation from '../Navigation';
 import Footer from '../Footer';
 import Home from '../Home';
 import UserSettings from '../UserSettings';
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="app">
       <Header />
+      <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<UserSettings />} />
