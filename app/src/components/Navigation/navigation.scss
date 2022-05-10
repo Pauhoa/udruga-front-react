@@ -1,7 +1,7 @@
 @use 'src/styles/vars';
 
 .navigation{
-  background-color: rgba(vars.$footer-color, 0.9);
+  background-color: rgba(vars.$footer-color, 0.95);
   font-family: 'Raleway';
   font-size: 135%;
   color: white;
@@ -14,7 +14,6 @@
     display: none;
   }
   @media screen and (min-width: 768px){
-    top: 100px;
     text-align: left;
     &:hover{
       background-color: vars.$footer-color;

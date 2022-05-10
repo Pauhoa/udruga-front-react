@@ -6,7 +6,10 @@
   justify-content: space-between;
   padding: 1em;
   background: linear-gradient(90deg, vars.$first-color, vars.$second-color );
-  border-radius: 8px 8px 8px 0;
+  border-radius: 8px 8px 0 0;
+  @media screen and (min-width: 768px){
+    border-radius: 8px 8px 8px 0;
+  }
   align-items: center;
   color: white;
   
