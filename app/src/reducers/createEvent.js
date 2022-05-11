@@ -1,7 +1,7 @@
-import { CHANGE_CREATEEVENT_FIELD } from '../actions/createevent';
+import { CHANGE_CREATEEVENT_FIELD } from '../actions/createEvent';
 
 export const initialeState = {
-  eventname: 'Réunion',
+  eventName: 'Coucou',
   categories: 'Cétégorie',
   description: 'Réunion hebdo',
   date: 'Date souhaité',
