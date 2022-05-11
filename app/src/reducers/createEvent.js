@@ -1,10 +1,10 @@
 import { CHANGE_CREATEEVENT_FIELD } from '../actions/createEvent';
 
 export const initialeState = {
-  eventName: 'Coucou',
-  categories: 'Cétégorie',
-  description: 'Réunion hebdo',
-  date: 'Date souhaité',
+  eventName: '',
+  categories: '',
+  description: '',
+  date: '',
 };
 
 const reducer = (state = initialeState, action = {}) => {

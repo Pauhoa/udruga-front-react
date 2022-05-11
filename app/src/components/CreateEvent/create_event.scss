@@ -1,0 +1,46 @@
+@use 'src/styles/vars';
+
+.create-event__form {
+  width: 75%;
+  margin: 1em auto;
+  padding: 1em;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+  box-shadow: 0px 8px 16px 2px rgb(#7090B0, 0.2);
+  &:hover{
+    transform: scale(1.02);
+  }
+
+  transition: transform 0.1s linear;
+    
+  input, button, select, textarea{
+    font-family: 'Raleway';
+    margin-top: 1.5em;
+    border: none;
+    width: 90%;
+    padding: 0.5em 1em;
+    background-color: white;
+  }
+  input, select, textarea {
+    border-bottom: 1px solid vars.$first-color;
+  }
+  button {
+    color: white;
+    background-color: vars.$first-color;
+    width: auto;
+    border-radius: 4px;
+    &:hover{
+      background-color: #6d79fd;
+    }
+  }
+  label {
+    margin-top: 2em;
+  }
+}
+
+textarea {
+  height: 200px;
+}

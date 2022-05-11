@@ -4,7 +4,7 @@ import { changeCreateEventField } from '../../actions/createEvent';
 import './create_event.scss';
 
 function CreateEvent() {
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
 
   const changeField = (value, name) => {
     dispatch(changeCreateEventField(value, name));
@@ -20,16 +20,42 @@ function CreateEvent() {
   const date = useSelector((state) => state.createEvent.date);
 
   return (
-    <form className="create__event">Créer votre événement!
-      <input type="text" name="eventName" placeholder="Nom de l'événement" onChange={handleChange} value={eventName} />
+    <form className="create-event__form">Créer votre évènement
+      <label htmlFor="eventName">Choisissez un nom pour votre évènement</label>
+      <input
+        type="text"
+        name="eventName"
+        placeholder="Nom de l'évènement"
+        onChange={handleChange}
+        value={eventName}
+      />
       <label htmlFor="categories">Choisissez une catégorie</label>
-      <select value={categories} name="categories" id="categories" onChange={handleChange}>
+      <select
+        value={categories}
+        name="categories"
+        id="categories"
+        onChange={handleChange}
+      >
         <option value="meeting">Réunion</option>
-        <option value="classroom">Cours</option>
+        <option value="training">Cours</option>
         <option value="competition">Compétition</option>
       </select>
-      <input type="text" name="description" placeholder="Description de l'événement" onChange={handleChange} value={description} />
-      <input type="date" name="date" placeholder="Date de l'événement" onChange={handleChange} value={date} />
+      <label htmlFor="description">Décrivez votre évènement</label>
+      <textarea
+        type="text"
+        name="description"
+        placeholder="Description de l'évènement"
+        onChange={handleChange}
+        value={description}
+      />
+      <label htmlFor="date">Date de votre évènement</label>
+      <input
+        type="date"
+        name="date"
+        placeholder="Date de l'évènement"
+        onChange={handleChange}
+        value={date}
+      />
       <button type="submit"> Créer </button>
     </form>
   );
