@@ -1,3 +1,6 @@
+// import : npm
+import { NavLink } from 'react-router-dom';
+
 // styles
 import './footer.scss';
 
@@ -7,9 +10,30 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <a href="#" className="footer__link">Mentions Légales</a>
-      <a href="#" className="footer__link">Conditions générales d'utilisation</a>
-      <a href="#" className="footer__link">Team</a>
+      <NavLink
+        to="/legale-notice"
+        className={
+          ({ isActive }) => (isActive ? 'footer__link footer__link--active' : 'footer__link')
+        }
+      >
+        Mentions Légales
+      </NavLink>
+      <NavLink
+        to="/terms-of-service"
+        className={
+          ({ isActive }) => (isActive ? 'footer__link footer__link--active' : 'footer__link')
+        }
+      >
+        Conditions générales d'utilisation
+      </NavLink>
+      <NavLink
+        to="/team"
+        className={
+          ({ isActive }) => (isActive ? 'footer__link footer__link--active' : 'footer__link')
+        }
+      >
+        Team
+      </NavLink>
       <p className="footer__copyright">Copyright {year}</p>
     </footer>
   );
