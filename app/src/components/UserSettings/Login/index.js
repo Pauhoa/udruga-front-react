@@ -1,5 +1,6 @@
 import Proptypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../../../actions/user';
 // styles
 import '../userSettings.scss';
 
@@ -10,12 +11,19 @@ function Login({
     changeField(evt.target.value, evt.target.name);
   };
 
+  const dispatch = useDispatch();
+
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    dispatch(login());
+  }
   const email = useSelector((state) => state.user.email);
   const password = useSelector((state) => state.user.password);
 
   return (
     <form
       className="form form__login"
+      onSubmit={handleSubmit}
     >
       Connectez-vous
       <input
@@ -32,7 +40,11 @@ function Login({
         placeholder="Votre mot de passe"
         onChange={handleChange}
       />
-      <button type="submit">Se connecter</button>
+      <button
+        type="submit"
+      >
+        Se connecter
+      </button>
     </form>
   );
 }

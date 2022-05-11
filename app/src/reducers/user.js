@@ -1,4 +1,4 @@
-import { CHANGE_LOGIN_FIELD } from '../actions/user';
+import { CHANGE_LOGIN_FIELD, SAVE_USER } from '../actions/user';
 
 export const initialState = {
   email: 'jean@pipou.fr',
@@ -11,6 +11,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.name]: action.value,
+      };
+    case SAVE_USER:
+      return {
+        ...state,
+        userToken: action.JWTokenFromAPI,
       };
     default:
       return state;

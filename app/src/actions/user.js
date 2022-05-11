@@ -17,3 +17,20 @@ export const changeSigninField = (value, name) => ({
   value,
   name,
 });
+
+// ACTION TYPE LOGIN
+export const LOGIN = 'LOGIN';
+
+// ACTION CREATOR login
+export const login = () => ({
+  type: LOGIN,
+});
+
+// ACTION TYPE SAVE_USER
+export const SAVE_USER = 'SAVE_USER';
+
+// ACTION CREATOR saveUser
+export const saveUser = (JWTokenFromAPI) => ({
+  type: SAVE_USER,
+  JWTokenFromAPI,
+});
