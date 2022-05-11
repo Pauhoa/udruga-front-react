@@ -1,0 +1,79 @@
+@use 'src/styles/vars';
+
+.team {
+  font-family: 'Raleway';
+  width: 100%;
+  margin: 1em auto;
+  text-align: center;
+  &-member {
+    width: 75%;
+    margin:  0 auto;
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 768px){
+      width: 75%;
+      flex-direction: row;
+      &:nth-of-type(even){
+        flex-direction: row-reverse;
+      }
+    }
+    align-items: center;
+    justify-content: center;
+    &__image{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @media screen and (min-width: 768px){
+        width: 25%;
+        height: 50%;
+      };
+    }
+    &__infos{
+      width: 80%;
+      @media screen and (min-width: 768px){
+        width: 30%;
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      text-align: justify;
+      .links {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .link{
+          margin: 1em;
+          width: 40px;
+          &-linkedin{
+            fill: #0A66C2;
+          }
+        }
+      }
+    }
+    
+  }
+
+  
+  h2, h3 {
+    font-weight: bold;
+    color: vars.$first-color;
+  }
+  h2 {
+    font-size: 150%;
+  }
+  h3 {
+    font-size: 125%;
+    margin: 1em auto;
+  }
+
+  h2:nth-of-type(even) {
+    margin-top: 2em;
+  }
+
+  p {
+    font-size: 75%;
+    font-style: italic;
+  }
+}

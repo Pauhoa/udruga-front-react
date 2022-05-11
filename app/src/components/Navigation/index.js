@@ -10,7 +10,7 @@ function Navigation() {
   return (
     <nav className={isOpen ? 'navigation' : 'navigation-closed'}>
       <NavLink
-        to="/"
+        to="/profil"
         className={
           ({ isActive }) => (isActive ? 'navigation__link navigation__link--active' : 'navigation__link')
           }
