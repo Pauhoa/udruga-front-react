@@ -10,8 +10,6 @@ import Footer from '../Footer';
 import Home from '../Home';
 import UserSettings from '../UserSettings';
 import Association from '../Association';
-import Profil from '../Profil';
-import EventDetails from '../EventDetails';
 
 function App() {
   return (
@@ -20,10 +18,8 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/profil" element={<Profil />} />
         <Route path="/login" element={<UserSettings />} />
         <Route path="/association" element={<Association />} />
-        <Route path="/event/details" element={<EventDetails />} />
       </Routes>
       <Footer />
     </div>
