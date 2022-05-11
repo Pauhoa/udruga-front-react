@@ -13,6 +13,7 @@ import Association from '../Association';
 import Events from '../Events';
 import CreateEvent from '../CreateEvent';
 import Profil from '../Profil';
+import Team from '../Team';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/association" element={<Association />} />
           <Route path="/events" element={<Events />} />
           <Route path="/create-event" element={<CreateEvent />} />
+          <Route path="/team" element={<Team />} />
         </Routes>
       </main>
       <Footer />
