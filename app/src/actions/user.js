@@ -30,7 +30,7 @@ export const login = () => ({
 export const SAVE_USER = 'SAVE_USER';
 
 // ACTION CREATOR saveUser
-export const saveUser = (JWTokenFromAPI) => ({
+export const saveUser = (data) => ({
   type: SAVE_USER,
-  JWTokenFromAPI,
+  data,
 });

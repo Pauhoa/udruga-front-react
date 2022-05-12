@@ -1,7 +1,14 @@
 // import Style
 import './profil.scss';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import JoinAsso from '../JoinAsso';
 
 function Profil() {
+  const currentUser = useSelector((state) => state.user.current.user);
+  const userRole = currentUser.role;
+  const userAsso = currentUser.association_id;
+
   return (
     <div className="profil">
       <form className="profil__section">
@@ -19,11 +26,18 @@ function Profil() {
           </button>
         </div>
       </form>
-      <form className="profil__events--section">
-        <h2 className="profil__title">Evènements</h2>
-        <input type="text" name="firstName" value="Evènement 1" />
-        <div className="profil__manage" />
-      </form>
+      {(userRole === 'user') && (
+        (userAsso === null) ? (
+          <JoinAsso />)
+          : (
+            <p>CoucouCoucou</p>
+          )
+      )}
+      { (userRole === 'admin') && (
+        <Link to="/create-event">
+          <button type="button">Créer une association</button>
+        </Link>
+      )}
     </div>
 
   );
