@@ -5,6 +5,8 @@ import { ReactComponent as LinkedinSvg } from '../../assets/linkedin.svg';
 
 function Team() {
   return (
+    // todo RECUPERER SVG DE CHACUN
+    // todo RECUPERER LIEN GITHUB ET LINKEDIN
     <div className="team">
       <div>
         <h2>L'équipe Front-End</h2>
@@ -27,11 +29,11 @@ function Team() {
         </div>
         <div className="team-member">
           <div className="team-member__image">
-            <img src="https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&facialHairType=BeardMajestic&facialHairColor=Black&clotheType=Hoodie&clotheColor=Blue01&eyeType=Default&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Light" alt="member avatar" />
+            <img src="https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Round&hairColor=Blonde&facialHairType=Blank&clotheType=ShirtCrewNeck&clotheColor=Heather&eyeType=Happy&eyebrowType=Default&mouthType=Twinkle&skinColor=Light" alt="member avatar" />
           </div>
           <div className="team-member__infos">
-            <h3>Nom prénom</h3>
-            <p>Courte description</p>
+            <h3>Laurent Nunez</h3>
+            <p>Développeur front-end, product owner</p>
             <div className="links">
               <a href="#">
                 <GithubSvg href="#" className="link link-github" />
