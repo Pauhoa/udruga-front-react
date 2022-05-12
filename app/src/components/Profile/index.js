@@ -1,22 +1,25 @@
 // import Style
-import './profil.scss';
+import './profile.scss';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import JoinAsso from '../JoinAsso';
 
-function Profil() {
+import { ReactComponent as LogoProfile } from '../../assets/user.svg';
+
+function Profile() {
   const currentUser = useSelector((state) => state.user.current.user);
   const userRole = currentUser.role;
   const userAsso = currentUser.association_id;
 
   return (
     <div className="profil">
+      <LogoProfile className="profil__logo" />
       <form className="profil__section">
         <h2 className="profil__title">Profil</h2>
-        <input type="text" name="firstName" value="Coco" />
-        <input type="text" name="lastName" value="L'Asticot" />
-        <input type="text" name="email" value="coco-lasticot@gmail.com" />
-        <input type="role" name="role" value="Adhérent" />
+        <input type="text" name="firstName" value={currentUser.first_name} />
+        <input type="text" name="lastName" value={currentUser.last_name} />
+        <input type="text" name="email" value={currentUser.email} />
+        <input type="role" name="role" value={currentUser.role} />
         <div className="profil__manage">
           <button type="button" className="profil__manage--button__modify">
             Modifier
@@ -30,7 +33,7 @@ function Profil() {
         (userAsso === null) ? (
           <JoinAsso />)
           : (
-            <p>CoucouCoucou</p>
+            <p>Bienvenue {currentUser.first_name}</p>
           )
       )}
       { (userRole === 'admin') && (
@@ -43,4 +46,4 @@ function Profil() {
   );
 }
 
-export default Profil;
+export default Profile;

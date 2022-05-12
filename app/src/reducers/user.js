@@ -11,7 +11,7 @@ export const initialState = {
       last_name: 'Walker',
       email: 'johnywalker@hotmail.fr',
       role: 'user',
-      association_id: 1,
+      association_id: null,
     },
     token: 'mja33ddsslj999332JDL20ddzs92420',
   },
