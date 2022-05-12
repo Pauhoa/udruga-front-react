@@ -1,0 +1,28 @@
+@use 'src/styles/vars';
+
+.join {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: 768px){
+    width: 100%;
+  }
+  margin: auto;
+
+  &__section{
+    width: 100%;
+    padding: 1em;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em;
+    box-shadow: 0px 8px 16px 2px rgb(#7090B0, 0.2);
+  }
+  &__title{
+  color: vars.$first-color;
+  font-size: x-large;
+  }
+}

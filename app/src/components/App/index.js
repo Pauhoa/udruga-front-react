@@ -12,7 +12,7 @@ import UserSettings from '../UserSettings';
 import Association from '../Association';
 import Events from '../Events';
 import CreateEvent from '../CreateEvent';
-import Profil from '../Profil';
+import Profile from '../Profile';
 import Team from '../Team';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<UserSettings />} />
-          <Route path="/profil" element={<Profil />} />
+          <Route path="/profil" element={<Profile />} />
           <Route path="/association" element={<Association />} />
           <Route path="/events" element={<Events />} />
           <Route path="/create-event" element={<CreateEvent />} />
