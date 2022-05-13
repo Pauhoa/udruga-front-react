@@ -1,0 +1,31 @@
+Starting the development server...
+
+Compiled with warnings.
+
+src/middlewares/login.js
+  Line 15:11:  Unexpected console statement  no-console
+  Line 18:11:  Unexpected console statement  no-console
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in src/middlewares/login.js
+  Line 15:11:  Unexpected console statement  no-console
+  Line 18:11:  Unexpected console statement  no-console
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+src/middlewares/login.js
+  Line 15:11:  Unexpected console statement  no-console
+  Line 18:11:  Unexpected console statement  no-console
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in src/middlewares/login.js
+  Line 15:11:  Unexpected console statement  no-console
+  Line 18:11:  Unexpected console statement  no-console
+
+webpack compiled with 1 warning
