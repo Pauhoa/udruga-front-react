@@ -1,4 +1,4 @@
-import { CHANGE_CREATEEVENT_FIELD } from '../actions/createEvent';
+import { CHANGE_CREATEEVENT_FIELD, SAVE_EVENT } from '../actions/createEvent';
 
 export const initialeState = {
   eventName: '',
@@ -13,6 +13,11 @@ const reducer = (state = initialeState, action = {}) => {
       return {
         ...state,
         [action.name]: action.value,
+      };
+    case SAVE_EVENT:
+      return {
+        ...state,
+        ...action.createEvent,
       };
     default:
       return state;

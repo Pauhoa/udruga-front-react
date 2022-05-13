@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useDispatch, useSelector } from 'react-redux';
-import { changeCreateEventField } from '../../actions/createEvent';
+import { changeCreateEventField, createEvent } from '../../actions/createEvent';
+// styles
 import './create_event.scss';
 
 function CreateEvent() {
@@ -14,13 +15,22 @@ function CreateEvent() {
     changeField(evt.target.value, evt.target.name);
   };
 
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    dispatch(createEvent());
+  }
+
   const eventName = useSelector((state) => state.createEvent.eventName);
   const categories = useSelector((state) => state.createEvent.categories);
   const description = useSelector((state) => state.createEvent.description);
   const date = useSelector((state) => state.createEvent.date);
 
   return (
-    <form className="create-event__form">Créer votre évènement
+    <form
+      className="create-event__form"
+      onSubmit={handleSubmit}
+    >
+      Créer votre évènement
       <label htmlFor="eventName">Choisissez un nom pour votre évènement</label>
       <input
         type="text"
