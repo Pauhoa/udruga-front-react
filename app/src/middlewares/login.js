@@ -8,11 +8,12 @@ const loginMiddleware = (store) => (next) => (action) => {
       const { email, password } = state.user;
 
       axios
-        .post('la bonne api', {
+        .post('http://localhost:8080/api/login', {
           email: email,
           password: password,
         }).then((response) => {
-          store.dispatch(saveUser(response.data));
+          console.log(response);
+          store.dispatch(saveUser(response));
         }).catch(() => {
           console.log('erreur appel api');
         });

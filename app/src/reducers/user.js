@@ -27,7 +27,7 @@ const reducer = (state = initialState, action = {}) => {
     case SAVE_USER:
       return {
         ...state,
-        userToken: action.data,
+        current: action.data,
       };
     default:
       return state;
