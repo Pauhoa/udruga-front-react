@@ -34,3 +34,11 @@ export const saveUser = (data) => ({
   type: SAVE_USER,
   data,
 });
+
+// ACTION TYPE SIGNIN
+export const SIGNIN = 'SIGNIN';
+
+// ACTION CREATOR SIGNIN
+export const signin = () => ({
+  type: SIGNIN,
+});
