@@ -8,8 +8,8 @@ const loginMiddleware = (store) => (next) => (action) => {
       const { email, password } = state.user;
 
       axios
-        .post('http://localhost:8080/api/login', {
-          email: email,
+        .post('http://localhost:8080/api/login_check', {
+          username: email,
           password: password,
         }).then((response) => {
           console.log(response);
