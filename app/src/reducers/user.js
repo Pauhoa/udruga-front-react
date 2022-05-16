@@ -1,19 +1,17 @@
 import { CHANGE_LOGIN_FIELD, SAVE_USER } from '../actions/user';
 
 export const initialState = {
-  email: 'jean@pipou.fr',
-  password: 'Paul',
-  isLogged: false,
+  email: 'user@user.com',
+  password: 'user',
   current: {
     user: {
       id: 1,
-      first_name: 'Jonhy',
-      last_name: 'Walker',
-      email: 'johnywalker@hotmail.fr',
-      role: 'user',
+      first_name: '',
+      last_name: '',
+      email: '',
+      role: '',
       association_id: null,
     },
-    token: 'mja33ddsslj999332JDL20ddzs92420',
   },
 };
 

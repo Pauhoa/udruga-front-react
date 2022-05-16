@@ -29,14 +29,14 @@ function Profile() {
           </button>
         </div>
       </form>
-      {(userRole === 'user') && (
+      {(userRole === 'ROLE_USER') && (
         (userAsso === null) ? (
           <JoinAsso />)
           : (
             <p>Bienvenue {currentUser.first_name}</p>
           )
       )}
-      { (userRole === 'admin') && (
+      { (userRole === 'ROLE_ADMIN') && (
         <Link to="/create-event">
           <button type="button">Créer une association</button>
         </Link>

@@ -1,12 +1,12 @@
 import { CHANGE_SIGNIN_FIELD } from '../actions/user';
 
 export const initialState = {
-  firstName: 'coco',
-  lastName: 'Louis',
-  signinEmail: 'coco@gmail.fr',
-  signinPassword: 'hello',
-  confirmedPassword: 'hello',
-  role: 'user',
+  firstName: '',
+  lastName: '',
+  signinEmail: '',
+  signinPassword: '',
+  confirmedPassword: '',
+  role: 'ROLE_USER',
 };
 
 const reducer = (state = initialState, action = {}) => {

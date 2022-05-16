@@ -26,7 +26,6 @@ function JoinAsso() {
       association_id: 5,
       name_asso: 'Escrime 22',
     },
-
   ];
 
   const dispatch = useDispatch();
@@ -61,7 +60,7 @@ function JoinAsso() {
           <option selected disabled>Chosissez votre association</option>
           {assosData.map((asso) => (
             <option
-              key={asso.id}
+              key={asso.association_id}
               value={asso.association_id}
             >
               {asso.name_asso}
