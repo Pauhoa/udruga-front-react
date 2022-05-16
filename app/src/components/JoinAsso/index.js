@@ -1,33 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // style
 import './joinAsso.scss';
+// import : npm
 import { useDispatch, useSelector } from 'react-redux';
-import { changeJoinAssoField } from '../../actions/joinasso';
+import { useEffect } from 'react';
+import Option from './option';
+import { fetchAssos, changeJoinAssoField } from '../../actions/joinasso';
 
 function JoinAsso() {
-  const assosData = [
-    {
-      association_id: 1,
-      name_asso: 'Liffré basket club',
-    },
-    {
-      association_id: 2,
-      name_asso: 'Association Echec 23',
-    },
-    {
-      association_id: 3,
-      name_asso: 'Club Cycliste ',
-    },
-    {
-      association_id: 4,
-      name_asso: 'Alcooliques anonymes',
-    },
-    {
-      association_id: 5,
-      name_asso: 'Escrime 22',
-    },
-  ];
-
   const dispatch = useDispatch();
 
   const changeField = (value, name) => {
@@ -40,6 +20,14 @@ function JoinAsso() {
 
   const assoId = useSelector((state) => state.joinasso.assoId);
 
+  // au montage du composant on veut récupérer toutes les associations pour permettre
+  // à l'utilisateur ( role:user ) d'accéder à la liste des association venant du serveur
+  useEffect(() => {
+    dispatch(fetchAssos());
+  }, []);
+
+  const assosData = useSelector((state) => state.joinasso.allAssos);
+  console.log(assosData);
   return (
     <div
       className="join"
@@ -57,13 +45,9 @@ function JoinAsso() {
           id="asso-select"
           onChange={handleChange}
         >
-          {assosData.map((asso) => (
-            <option
-              key={asso.association_id}
-              value={asso.association_id}
-            >
-              {asso.name_asso}
-            </option>
+          <option value="1">Option 1</option>
+          {assosData?.map((asso) => (
+            <Option name={asso.name} id={asso.id} key={asso.id} />
           ))}
         </select>
         <button type="submit">Rejoindre</button>

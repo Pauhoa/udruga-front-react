@@ -5,12 +5,14 @@ import loginMiddleware from '../middlewares/login';
 import signinMiddleware from '../middlewares/signin';
 import createEventMiddleware from '../middlewares/createEvent';
 import createAssoMiddleware from '../middlewares/createAsso';
+import joinAssoMiddleware from '../middlewares/joinAsso';
 
 const middlewares = [
   loginMiddleware,
   signinMiddleware,
   createEventMiddleware,
   createAssoMiddleware,
+  joinAssoMiddleware,
 ];
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
