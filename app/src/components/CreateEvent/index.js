@@ -60,7 +60,7 @@ function CreateEvent() {
       />
       <label htmlFor="date">Date de votre évènement</label>
       <input
-        type="date"
+        type="datetime-local"
         name="date"
         placeholder="Date de l'évènement"
         onChange={handleChange}

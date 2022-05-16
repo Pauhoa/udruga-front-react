@@ -21,7 +21,9 @@ function Header() {
         onClick={handleToggleClick}
       >Menu
       </button>
-      <Logo className="header__logo" />
+      <Link to="/">
+        <Logo className="header__logo" />
+      </Link>
       <Link to="/login">
         <button
           type="button"

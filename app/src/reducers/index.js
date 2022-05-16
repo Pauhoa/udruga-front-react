@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import createAssoReducer from './createAsso';
 import createEventReducer from './createEvent';
 import userReducer from './user';
 import registrationReducer from './registration';
@@ -9,6 +10,7 @@ const rootReducer = combineReducers({
   user: userReducer,
   registration: registrationReducer,
   navigation: navigationReducer,
+  createAsso: createAssoReducer,
   createEvent: createEventReducer,
   joinasso: JoinAssoReducer,
 });
