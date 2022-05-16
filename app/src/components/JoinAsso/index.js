@@ -57,7 +57,6 @@ function JoinAsso() {
           id="asso-select"
           onChange={handleChange}
         >
-          <option selected disabled>Chosissez votre association</option>
           {assosData.map((asso) => (
             <option
               key={asso.association_id}

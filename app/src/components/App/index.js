@@ -15,6 +15,7 @@ import CreateEvent from '../CreateEvent';
 import Profile from '../Profile';
 import Team from '../Team';
 import CreateAsso from '../CreateAsso';
+import EventDetails from '../EventDetails';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/create-event" element={<CreateEvent />} />
           <Route path="/team" element={<Team />} />
           <Route path="/create-asso" element={<CreateAsso />} />
+          <Route path="/event/:id" element={<EventDetails />} />
         </Routes>
       </main>
       <Footer />

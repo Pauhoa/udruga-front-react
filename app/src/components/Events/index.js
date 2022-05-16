@@ -36,7 +36,7 @@ function Events() {
   return (
     <div className="events">
       {events.map((event) => (
-        <Link to={`event/${event.id}`}>
+        <Link to={`/event/${event.id}`} key={event.id}>
           <Event
             key={event.id}
             title={event.title}
