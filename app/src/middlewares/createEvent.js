@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CREATE_EVENT, saveEvent } from '../actions/createEvent';
+import { CREATE_EVENT } from '../actions/createEvent';
 
 const createEventMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -16,7 +16,7 @@ const createEventMiddleware = (store) => (next) => (action) => {
           description: description,
           date: date,
         }).then((response) => {
-          store.dispatch(saveEvent(response.data));
+          console.log(response.data);
         }).catch(() => {
           console.log('erreur appel api');
         });

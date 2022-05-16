@@ -38,9 +38,10 @@
   label {
     margin-top: 2em;
   }
-}
 
-textarea {
-  max-width: 90%;
-  height: 200px;
+  textarea {
+    min-width: 90%;
+    max-width: 90%;
+    height: 200px;
+  }
 }

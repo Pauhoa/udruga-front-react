@@ -1,6 +1,7 @@
-import { CHANGE_CREATEASSO_FIELD, SAVE_ASSO } from '../actions/createAsso';
+import { CHANGE_CREATEASSO_FIELD } from '../actions/createAsso';
 
 export const initialeState = {
+  id: 1,
   assoName: 'coucou',
   description: 'coucou 2',
   siren: 'FBIOPENUP302938',
@@ -12,11 +13,6 @@ const reducer = (state = initialeState, action = {}) => {
       return {
         ...state,
         [action.name]: action.value,
-      };
-    case SAVE_ASSO:
-      return {
-        ...state,
-        ...action.createEvent,
       };
     default:
       return state;
