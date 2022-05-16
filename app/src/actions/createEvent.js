@@ -17,10 +17,10 @@ export const createEvent = () => ({
 });
 
 // ACTION TYPE SAVE_EVENT
-export const SAVE_EVENT = 'SAVE_EVENT';
+// export const SAVE_EVENT = 'SAVE_EVENT';
 
 // ACTION CREATOR saveEvent
-export const saveEvent = (data) => ({
-  type: SAVE_EVENT,
-  data,
-});
+// export const saveEvent = (data) => ({
+// type: SAVE_EVENT,
+// data,
+// });

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 // styles
 import './events.scss';
 
@@ -34,12 +36,14 @@ function Events() {
   return (
     <div className="events">
       {events.map((event) => (
-        <Event
-          key={event.id}
-          title={event.title}
-          type={event.type}
-          date={event.date}
-        />
+        <Link to={`/event/${event.id}`} key={event.id}>
+          <Event
+            key={event.id}
+            title={event.title}
+            type={event.type}
+            date={event.date}
+          />
+        </Link>
       ))}
     </div>
   );

@@ -4,7 +4,8 @@ import createEventReducer from './createEvent';
 import userReducer from './user';
 import registrationReducer from './registration';
 import navigationReducer from './navigation';
-import JoinAssoReducer from './joinasso';
+import joinAssoReducer from './joinasso';
+import association from './association';
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   navigation: navigationReducer,
   createAsso: createAssoReducer,
   createEvent: createEventReducer,
-  joinasso: JoinAssoReducer,
+  joinasso: joinAssoReducer,
+  association: association,
 });
 
 export default rootReducer;

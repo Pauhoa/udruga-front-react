@@ -1,6 +1,7 @@
 @use 'src/styles/vars';
 
 .create-event__form {
+  height: fit-content;
   width: 75%;
   margin: 1em auto;
   padding: 1em;
@@ -38,9 +39,10 @@
   label {
     margin-top: 2em;
   }
-}
 
-textarea {
-  max-width: 90%;
-  height: 200px;
+  textarea {
+    min-width: 90%;
+    max-width: 90%;
+    height: 200px;
+  }
 }

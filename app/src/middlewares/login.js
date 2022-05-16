@@ -7,13 +7,18 @@ const loginMiddleware = (store) => (next) => (action) => {
       const state = store.getState();
       const { email, password } = state.user;
 
+      const dataLogin = {
+        username: email,
+        password: password,
+      };
+
+      console.log(dataLogin);
+
       axios
-        .post('http://localhost:8080/api/login_check', {
-          username: email,
-          password: password,
-        }).then((response) => {
-          console.log(response);
-          store.dispatch(saveUser(response));
+        .post('http://charafcolo-server.eddi.cloud/projet-03-udruga-back/public/api/login_check', dataLogin)
+        .then((response) => {
+          console.log(response.status);
+          store.dispatch(saveUser(response.data));
         }).catch(() => {
           console.log('erreur appel api');
         });

@@ -6,18 +6,21 @@ const signinMiddleware = (store) => (next) => (action) => {
     case SIGNIN: {
       const state = store.getState();
       const {
-        lastName, firstName, email, password, confirmedPassword, role,
-      } = state.user;
+        lastName, firstName, signinEmail, signinPassword, role,
+      } = state.registration;
+
+      const dataSignup = {
+        lastName: lastName,
+        firstName: firstName,
+        email: signinEmail,
+        password: signinPassword,
+        roles: [role],
+      };
 
       axios
-        .post('la bonne api', {
-          lastName: lastName,
-          firstName: firstName,
-          email: email,
-          password: password,
-          confirmedPassword: confirmedPassword,
-          role: role,
-        }).then((response) => {
+        .post('http://charafcolo-server.eddi.cloud/projet-03-udruga-back/public/api/users', dataSignup)
+        .then((response) => {
+          console.log(response.status);
           store.dispatch(saveUser(response.data));
         }).catch(() => {
           console.log('erreur appel api');
