@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+// import EventDetails from '../EventDetails';
 // styles
 import './events.scss';
 
@@ -36,7 +36,7 @@ function Events() {
   return (
     <div className="events">
       {events.map((event) => (
-        <Link to={`/event/${event.id}`} key={event.id}>
+        <Link to={`/event/:${event.id}`} state={{ event }} key={event.id}>
           <Event
             key={event.id}
             title={event.title}

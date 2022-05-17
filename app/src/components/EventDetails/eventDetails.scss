@@ -1,11 +1,11 @@
 @use 'src/styles/vars';
 
-.events {
+.eventDetails {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: auto;
-
+  color : red;
 
 button {
   color: white;
