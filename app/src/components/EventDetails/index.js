@@ -16,12 +16,11 @@ function EventDetails() {
   }
   return (
     <div className="eventDetails">
-      <ul>
-        <li>{theEvent.title}</li>
-        <li>{theEvent.type}</li>
-        <li>{theEvent.date}</li>
-        <li>description</li>
-      </ul>
+      <h2>{theEvent.title}</h2>
+      <p>{theEvent.type}</p>
+      <p>{theEvent.date}</p>
+      <p>{theEvent.description}</p>
+      <button type="submit">S'inscrire</button>
     </div>
   );
 }

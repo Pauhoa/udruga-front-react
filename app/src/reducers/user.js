@@ -6,11 +6,12 @@ export const initialState = {
   current: {
     user: {
       id: 1,
-      first_name: '',
-      last_name: '',
+      firstname: '',
+      lastname: '',
       email: '',
-      role: '',
+      roles: '',
       association_id: null,
+      logged: false,
     },
   },
 };

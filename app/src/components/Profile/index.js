@@ -8,7 +8,8 @@ import { ReactComponent as LogoProfile } from '../../assets/user.svg';
 
 function Profile() {
   const currentUser = useSelector((state) => state.user.current.user);
-  const userRole = currentUser.role;
+  const currentUserRole = useSelector((state) => state.user.current.user.roles);
+  // const userRole = currentUser.role;
   const userAsso = currentUser.association_id;
 
   return (
@@ -16,10 +17,10 @@ function Profile() {
       <LogoProfile className="profil__logo" />
       <form className="profil__section">
         <h2 className="profil__title">Profil</h2>
-        <input type="text" name="firstName" value={currentUser.first_name} />
-        <input type="text" name="lastName" value={currentUser.last_name} />
+        <input type="text" name="firstName" value={currentUser.firstname} />
+        <input type="text" name="lastName" value={currentUser.lastname} />
         <input type="text" name="email" value={currentUser.email} />
-        <input type="role" name="role" value={currentUser.role} />
+        <input type="role" name="role" value={currentUserRole} />
         <div className="profil__manage">
           <button type="button" className="profil__manage--button__modify">
             Modifier
@@ -29,14 +30,14 @@ function Profile() {
           </button>
         </div>
       </form>
-      {(userRole === 'ROLE_USER') && (
+      {(currentUserRole === 'ROLE_USER') && (
         (userAsso === null) ? (
           <JoinAsso />)
           : (
-            <p>Bienvenue {currentUser.first_name}</p>
+            <p>Bienvenue {currentUser.firstname}</p>
           )
       )}
-      { (userRole === 'ROLE_ADMIN') && (
+      { (currentUserRole === 'ROLE_ADMIN') && (
         <Link to="/create-event">
           <button type="button">Créer une association</button>
         </Link>
