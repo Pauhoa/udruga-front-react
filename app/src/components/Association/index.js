@@ -12,12 +12,12 @@ import JoinAsso from '../JoinAsso';
 
 function Association() {
   const currentUser = useSelector((state) => state.user.current.user);
-  const userRole = currentUser.role;
+  const currentUserRole = useSelector((state) => state.user.current.user.roles);
   const userAsso = currentUser.association_id;
 
   return (
     <div className="asso">
-      { (userAsso === null) ? (
+      { (!userAsso) ? (
         <JoinAsso />
       ) : (
         <>
@@ -30,13 +30,13 @@ function Association() {
               <h3>Les événements</h3>
               <EventSvg className="asso__events--card__svg" />
             </div>
-            {(userRole === 'user') && (
+            {(currentUserRole[0] === 'ROLE_USER') && (
               <div className="asso__events--card">
                 <h3>Mes participations</h3>
                 <CalendarSvg className="asso__events--card__svg" />
               </div>
             )}
-            { (userRole === 'admin') && (
+            { (currentUserRole[0] === 'ROLE_ADMIN') && (
               <div className="asso__events--card">
                 <h3>Mes participations</h3>
                 <CreateEventSvg className="asso__events--card__svg" />

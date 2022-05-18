@@ -30,8 +30,8 @@ function Profile() {
           </button>
         </div>
       </form>
-      {(currentUserRole === 'ROLE_USER') && (
-        (userAsso === null) ? (
+      {(currentUserRole[0] === 'ROLE_USER') && (
+        (!userAsso) ? (
           <JoinAsso />)
           : (
             <p>Bienvenue {currentUser.firstname}</p>

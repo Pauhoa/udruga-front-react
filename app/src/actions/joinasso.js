@@ -24,3 +24,13 @@ export const saveAssos = (data) => ({
   type: SAVE_ASSOS,
   data,
 });
+
+// ACTION TYPE JOIN_ASSO_API
+export const JOIN_ASSO_API = 'JOIN_ASSO_API';
+
+// ACTION CREATOR joinAssoApi
+export const joinAssoApi = (assoId, userId) => ({
+  type: JOIN_ASSO_API,
+  assoId,
+  userId,
+});
