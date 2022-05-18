@@ -10,7 +10,6 @@ export const initialState = {
       lastname: '',
       email: '',
       roles: '',
-      association_id: null,
       logged: false,
     },
   },

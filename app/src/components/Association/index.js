@@ -1,6 +1,6 @@
 // import : npm
 import { useSelector } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 // import : Local
 
 // import Style
@@ -9,6 +9,7 @@ import { ReactComponent as CalendarSvg } from '../../assets/calendar.svg';
 import { ReactComponent as EventSvg } from '../../assets/event.svg';
 import { ReactComponent as CreateEventSvg } from '../../assets/createEvent.svg';
 import JoinAsso from '../JoinAsso';
+import CreateAsso from '../CreateAsso';
 
 function Association() {
   const currentUser = useSelector((state) => state.user.current.user);
@@ -17,9 +18,9 @@ function Association() {
 
   return (
     <div className="asso">
-      { (!userAsso) ? (
-        <JoinAsso />
-      ) : (
+      { (!userAsso && currentUserRole[0] === 'ROLE_USER') && <JoinAsso /> }
+      { (!userAsso && currentUserRole[0] === 'ROLE_ADMIN') && <CreateAsso /> }
+      { (userAsso && (
         <>
           <div className="asso__info">
             <h2 className="asso__info--title">Nom Asso</h2>
@@ -37,17 +38,17 @@ function Association() {
               </div>
             )}
             { (currentUserRole[0] === 'ROLE_ADMIN') && (
-              <div className="asso__events--card">
-                <h3>Mes participations</h3>
+              <Link className="asso__events--card" to="/create-event">
+                <h3>Créer un évènement</h3>
                 <CreateEventSvg className="asso__events--card__svg" />
-              </div>
+              </Link>
             )}
           </div>
           <button type="button" className="button__unsub">
             Se désinscrire
           </button>
         </>
-      )}
+      ))}
     </div>
   );
 }

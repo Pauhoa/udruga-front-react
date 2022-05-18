@@ -38,7 +38,7 @@ function Event({
   return (
     <Link to={`/event/${id}`}>
       <div className="event">
-        <img src={img} alt="component" />
+        <img className="event__image" src={img} alt="component" />
         <div className="event__info">
           <h2>{title}</h2>
           <p>{type}</p>

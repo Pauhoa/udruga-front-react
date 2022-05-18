@@ -1,7 +1,6 @@
 import { CHANGE_JOINASSO_FIELD, SAVE_ASSOS } from '../actions/joinasso';
 
 export const initialeState = {
-  assoId: 1,
 };
 
 const reducer = (state = initialeState, action = {}) => {

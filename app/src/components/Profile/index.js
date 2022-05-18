@@ -37,8 +37,8 @@ function Profile() {
             <p>Bienvenue {currentUser.firstname}</p>
           )
       )}
-      { (currentUserRole === 'ROLE_ADMIN') && (
-        <Link to="/create-event">
+      { (currentUserRole[0] === 'ROLE_ADMIN') && (
+        <Link to="/create-asso">
           <button type="button">Créer une association</button>
         </Link>
       )}

@@ -1,6 +1,7 @@
 // import
-import { /* Navigate, */ useParams } from 'react-router-dom';
+import { Navigate, useParams, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 // import Style
 import './eventDetails.scss';
 
@@ -12,9 +13,18 @@ function EventDetails() {
 
   const theEvent = events.find((event) => event.id === parseInt(id, 10));
 
-  // if (!theEvent) {
-  //   return <Navigate to="/error" replace />;
-  // }
+  const location = useLocation();
+
+  useEffect(
+    () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+    [location],
+  );
+
+  if (!theEvent) {
+    return <Navigate to="/error" replace />;
+  }
   return (
     <div className="eventDetails">
       <h2>{theEvent.title}</h2>
