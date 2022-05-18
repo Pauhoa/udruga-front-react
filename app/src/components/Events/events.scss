@@ -3,6 +3,11 @@
 .events {
   width: 75%;
   margin: 0 auto;
+  .no-event{
+    margin: 1em;
+    font-size: 125%;
+    color: vars.$first-color;
+  }
   .event{
     box-shadow: 0px 16px 32px 2px rgb(#7090B0, 0.2);
     display: flex;
@@ -50,5 +55,8 @@
         font-weight: bold;
       }
     }
+  }
+  p {
+    align-self: center;
   }
 }
