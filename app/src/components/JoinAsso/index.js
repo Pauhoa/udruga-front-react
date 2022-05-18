@@ -5,7 +5,7 @@ import './joinAsso.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Option from './option';
-import { fetchAssos, changeJoinAssoField } from '../../actions/joinasso';
+import { fetchAssos, changeJoinAssoField, joinAssoApi } from '../../actions/joinasso';
 
 function JoinAsso() {
   const dispatch = useDispatch();
@@ -27,13 +27,19 @@ function JoinAsso() {
   }, []);
 
   const assosData = useSelector((state) => state.joinasso.allAssos);
-  console.log(assosData);
+
+  const currentUserId = useSelector((state) => state.user.current.user.id);
+  const handleJoinAssoSubmit = (evt) => {
+    evt.preventDefault();
+    joinAssoApi(assoId, currentUserId);
+  };
   return (
     <div
       className="join"
     >
       <form
         className="join__section"
+        onSubmit={handleJoinAssoSubmit}
       >
         <h2
           className="join__title"
