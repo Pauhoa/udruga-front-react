@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchEvents } from '../../actions/events';
@@ -42,18 +41,19 @@ function Events() {
   }, []);
 
   const events = useSelector((state) => state.events.events);
+
   return (
     <div className="events">
       {events.length < 1 && <p className="no-event">Il n'y a aucun évènement disponible</p>}
       {events.map((event) => (
-        <Link to={`/event/:${event.id}`} state={{ event }} key={event.id}>
-          <Event
-            key={event.id}
-            title={event.title}
-            type={event.type}
-            date={event.date}
-          />
-        </Link>
+        <Event
+          id={event.id}
+          key={event.id}
+          title={event.title}
+          type={event.type}
+          date={event.date}
+          img={event.image}
+        />
       ))}
     </div>
   );
