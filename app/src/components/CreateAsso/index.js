@@ -25,8 +25,8 @@ function CreateAsso() {
   const description = useSelector((state) => state.createAsso.description);
   return (
     <form className="create-asso__form" onSubmit={handleSubmit}>
-      <h3> Créer votre association</h3>
-      <label htmlFor="assoName">Choisissez un nom pour votre évènement</label>
+      <h3> Créez votre association</h3>
+      <label htmlFor="assoName">Choisissez un nom pour votre association</label>
       <input
         type="text"
         name="assoName"

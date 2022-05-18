@@ -13,9 +13,12 @@
   &:hover{
     transform: scale(1.02);
   }
-
   transition: transform 0.1s linear;
     
+  h3{
+    color: vars.$first-color;
+    font-size: 125%;
+  }
   input, button, select, textarea{
     font-family: 'Raleway';
     margin-top: 1.5em;

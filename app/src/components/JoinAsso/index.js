@@ -33,6 +33,7 @@ function JoinAsso() {
     evt.preventDefault();
     joinAssoApi(assoId, currentUserId);
   };
+
   return (
     <div
       className="join"
@@ -51,7 +52,6 @@ function JoinAsso() {
           id="asso-select"
           onChange={handleChange}
         >
-          <option value="1">Option 1</option>
           {assosData?.map((asso) => (
             <Option name={asso.name} id={asso.id} key={asso.id} />
           ))}

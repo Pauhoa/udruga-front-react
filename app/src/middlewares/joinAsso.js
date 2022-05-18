@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-import { FETCH_ASSOS, saveAssos, JOIN_ASSO_API } from '../actions/joinasso';
+import {
+  FETCH_ASSOS,
+  saveAssos,
+  JOIN_ASSO_API,
+  changeJoinAssoField,
+} from '../actions/joinasso';
 import { saveUser } from '../actions/user';
 
 const joinAssoMiddleware = (store) => (next) => (action) => {
@@ -11,6 +16,7 @@ const joinAssoMiddleware = (store) => (next) => (action) => {
         .then(
           (response) => {
             store.dispatch(saveAssos(response.data));
+            store.dispatch(changeJoinAssoField(response.data[0].id, 'assoId'));
           },
         ).catch(
           () => console.log('fetch assos api call error'),
