@@ -11,7 +11,7 @@ function Profile() {
   const currentUserRole = useSelector((state) => state.user.current.user.roles);
   // const userRole = currentUser.role;
   const userAsso = currentUser.association_id;
-
+  const assoMember = useSelector((state) => state.association.name);
   return (
     <div className="profil">
       <LogoProfile className="profil__logo" />
@@ -30,13 +30,12 @@ function Profile() {
           </button>
         </div> */}
       </div>
-      {(currentUserRole[0] === 'ROLE_USER') && (
-        (!userAsso) ? (
-          <JoinAsso />)
-          : (
-            <p>Bienvenue {currentUser.firstname}</p>
-          )
-      )}
+      {
+        (currentUserRole[0] === 'ROLE_USER')
+        && (!userAsso)
+        && (<JoinAsso />)
+      }
+      {userAsso && <p>Votre association : {assoMember}</p>}
       { (currentUserRole[0] === 'ROLE_ADMIN') && (
         <Link to="/create-asso">
           <button type="button">Créer une association</button>

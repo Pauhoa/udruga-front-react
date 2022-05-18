@@ -1,5 +1,6 @@
 // import : npm
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 // import : Local
 import './app.scss';
 
@@ -18,6 +19,15 @@ import CreateAsso from '../CreateAsso';
 import EventDetails from '../EventDetails';
 
 function App() {
+  const location = useLocation();
+
+  useEffect(
+    () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+    [location],
+  );
+
   return (
     <div className="app">
       <Header />
