@@ -15,21 +15,21 @@ function Profile() {
   return (
     <div className="profil">
       <LogoProfile className="profil__logo" />
-      <form className="profil__section">
+      <div className="profil__section">
         <h2 className="profil__title">Profil</h2>
-        <input type="text" name="firstName" value={currentUser.firstname} />
-        <input type="text" name="lastName" value={currentUser.lastname} />
-        <input type="text" name="email" value={currentUser.email} />
-        <input type="role" name="role" value={currentUserRole} />
-        <div className="profil__manage">
+        <p>{currentUser.firstname}</p>
+        <p>{currentUser.lastname}</p>
+        <p>{currentUserRole}</p>
+        <p>{currentUser.email} </p>
+        {/* <div className="profil__manage">
           <button type="button" className="profil__manage--button__modify">
             Modifier
           </button>
           <button type="button" className="profil__manage--button__delete">
             Supprimer
           </button>
-        </div>
-      </form>
+        </div> */}
+      </div>
       {(currentUserRole[0] === 'ROLE_USER') && (
         (!userAsso) ? (
           <JoinAsso />)
