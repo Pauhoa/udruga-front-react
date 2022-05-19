@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { CREATE_ASSO, saveAsso } from '../actions/createAsso';
+import { saveUser } from '../actions/user';
 
 const createAssoMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -9,19 +10,32 @@ const createAssoMiddleware = (store) => (next) => (action) => {
         assoName, description, siren,
       } = state.createAsso;
 
+      const { token } = state.user.current;
+
       const {
         email, id,
       } = state.user.current.user;
 
       axios
-        .post('la bonne api', {
+        .post('http://charafcolo-server.eddi.cloud/projet-03-udruga-back/public/api/associations', {
           name: assoName,
-          SIREN: siren,
           description: description,
+          siren: siren,
           email: email,
-          code_user: id,
+          registrationCode: 12345,
+        }, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }).then((response) => {
           store.dispatch(saveAsso(response.data));
+          console.log(response.data);
+          axios
+            .patch(`http://charafcolo-server.eddi.cloud/projet-03-udruga-back/public/api/users/edit/${id}`, {
+              associationMember: response.data.id,
+            }).then((secondeResponse) => {
+              store.dispatch(saveUser(secondeResponse.data));
+            });
         }).catch(() => {
           console.log('erreur appel api');
         });

@@ -29,9 +29,10 @@ function JoinAsso() {
   const assosData = useSelector((state) => state.joinasso.allAssos);
 
   const currentUserId = useSelector((state) => state.user.current.user.id);
+
   const handleJoinAssoSubmit = (evt) => {
     evt.preventDefault();
-    joinAssoApi(assoId, currentUserId);
+    dispatch(joinAssoApi(assoId, currentUserId));
   };
 
   return (
