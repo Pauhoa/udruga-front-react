@@ -10,9 +10,9 @@ const createEventMiddleware = (store) => (next) => (action) => {
       } = state.createEvent;
 
       axios
-        .post('la bonne api', {
-          eventName: eventName,
-          categories: categories,
+        .post('http://charafcolo-server.eddi.cloud/projet-03-udruga-back/public/api/events', {
+          title: eventName,
+          type: categories,
           description: description,
           date: date,
         }).then((response) => {
