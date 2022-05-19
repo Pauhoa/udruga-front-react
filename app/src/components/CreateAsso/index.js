@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-// styles
 import { useSelector, useDispatch } from 'react-redux';
 import { changeCreateAssoField, createAsso } from '../../actions/createAsso';
+// styles
 import './create_asso.scss';
 
 function CreateAsso() {
