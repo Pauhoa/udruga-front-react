@@ -26,10 +26,11 @@ const joinAssoMiddleware = (store) => (next) => (action) => {
     case JOIN_ASSO_API:
       axios
         .patch(`http://charafcolo-server.eddi.cloud/projet-03-udruga-back/public/api/users/edit/${action.userId}`, {
-          association_id: action.assoId,
+          associationMember: action.assoId,
         })
         .then(
           (response) => {
+            console.log(response);
             store.dispatch(saveUser(response.data));
           },
         ).catch(
