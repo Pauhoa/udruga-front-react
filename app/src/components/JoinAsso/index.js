@@ -44,7 +44,7 @@ function JoinAsso() {
         onSubmit={handleJoinAssoSubmit}
       >
         <h2
-          className="join__title"
+          className="join__section--title"
         >Rejoindre une Association
         </h2>
         <select
