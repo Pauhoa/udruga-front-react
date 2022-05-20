@@ -42,7 +42,7 @@ const joinAssoMiddleware = (store) => (next) => (action) => {
             store.dispatch(saveUser(response.data));
           },
         ).catch(
-          () => console.log('impossible join asso api'),
+          () => console.log('erreur join asso api'),
         );
       next(action);
       break;
