@@ -14,3 +14,21 @@ export const saveEvents = (data) => ({
   type: SAVE_EVENTS,
   data,
 });
+
+// ACTION TYPE JOIN_EVENT
+export const JOIN_EVENT = 'JOIN_EVENT';
+
+// ACTION CREATOR joinEvent
+export const joinEvent = (eventId) => ({
+  type: JOIN_EVENT,
+  eventId,
+});
+
+// ACTION TYPE SAVE_PARTICIPATE
+export const SAVE_PARTICIPATE = 'SAVE_PARTICIPATE';
+
+// ACTION CREATOR saveParticipate
+export const saveParticipate = (data) => ({
+  type: SAVE_PARTICIPATE,
+  data,
+});

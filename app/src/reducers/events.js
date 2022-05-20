@@ -1,7 +1,8 @@
-import { SAVE_EVENTS } from '../actions/events';
+import { SAVE_EVENTS, SAVE_PARTICIPATE } from '../actions/events';
 
 export const initialState = {
   events: [],
+  participate: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -10,6 +11,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         events: action.data,
+      };
+    case SAVE_PARTICIPATE:
+      return {
+        ...state,
+        participate: action.data,
       };
     default:
       return state;

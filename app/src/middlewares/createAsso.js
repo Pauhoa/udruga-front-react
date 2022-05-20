@@ -33,6 +33,10 @@ const createAssoMiddleware = (store) => (next) => (action) => {
           axios
             .patch(`http://charafcolo-server.eddi.cloud/projet-03-udruga-back/public/api/users/edit/${id}`, {
               associationMember: response.data.id,
+            }, {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
             }).then((secondeResponse) => {
               store.dispatch(saveUser(secondeResponse.data));
             });
