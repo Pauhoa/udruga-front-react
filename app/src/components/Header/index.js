@@ -1,6 +1,6 @@
 // import : npm
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 // import : Local
 import './header.scss';
@@ -13,25 +13,48 @@ function Header() {
   function handleToggleClick() {
     dispatch(toggleMenu());
   }
+
+  const currentUser = useSelector((state) => state.user.current);
+  const userToken = currentUser.token;
+  console.log(userToken);
   return (
     <header className="header">
-      <button
-        type="button"
-        className="header__button header__button--menu"
-        onClick={handleToggleClick}
-      >Menu
-      </button>
+      {
+        (userToken)
+        && (
+        <button
+          type="button"
+          className="header__button header__button--menu"
+          onClick={handleToggleClick}
+        >Menu
+        </button>
+        )
+      }
       <Link to="/">
         <Logo className="header__logo" />
       </Link>
-      <Link to="/login">
-        <button
-          type="button"
-          className="header__button header__button--connect"
-        >
-          Connexion
-        </button>
-      </Link>
+      { (!userToken) && (
+        <Link to="/login">
+          <button
+            type="button"
+            className="header__button header__button--connect"
+          >
+            Connexion
+          </button>
+        </Link>
+      )}
+      {
+        (userToken) && (
+          <div className="connected-div">
+            <button
+              type="button"
+              className="header__button header__button--connect"
+            >
+              Déconnexion
+            </button>
+          </div>
+        )
+      }
     </header>
   );
 }

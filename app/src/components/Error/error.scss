@@ -9,12 +9,27 @@
   margin: auto;
   align-items: center;
   text-align: center;
+  .h2-div{
+    overflow: hidden;
+    &__404 {
+      z-index: inherit;
+      font-size: 104px;
+      animation: anim 1s ease-in-out;
+    }
+    @keyframes anim {
+      0% {
+        margin-bottom: 0px;
+      }
+      30% {
+        margin-bottom: 350px;
+      }
+      100% {
+        margin: 0;
+      }
+    }
+  }
   h2, p {
     margin: 1rem auto;
-  }
-  h2 {
-    animation: .5s linear 1s infinite alternate;
-    font-size: 104px;
   }
   button{
     color: white;

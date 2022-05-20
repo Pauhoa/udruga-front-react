@@ -4,13 +4,13 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  min-height: calc(100vh - 72px);
+  min-height: 90vh;
   width: 100%;
 }
 
 .title {
   color: vars.$first-color;
-  font-size: 90px;
+  font-size: 80px;
   margin-bottom: 1rem;
   @media screen and (min-width: 768px){
     font-size: 200px;
