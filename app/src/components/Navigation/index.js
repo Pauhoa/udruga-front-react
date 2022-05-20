@@ -6,31 +6,34 @@ import './navigation.scss';
 
 function Navigation() {
   const isOpen = useSelector((state) => state.navigation.isOpen);
+  const userToken = useSelector((state) => state.user.current.token);
 
-  return (
-    <nav className={isOpen ? 'navigation' : 'navigation-closed'}>
-      <NavLink
-        to="/profil"
-        className={
-          ({ isActive }) => (isActive ? 'navigation__link navigation__link--active' : 'navigation__link')
-        }
-      >Profil
-      </NavLink>
-      <NavLink
-        to="/association"
-        className={
-          ({ isActive }) => (isActive ? 'navigation__link navigation__link--active' : 'navigation__link')
-        }
-      >Association
-      </NavLink>
-      <NavLink
-        to="/events"
-        className={
-          ({ isActive }) => (isActive ? 'navigation__link navigation__link--active' : 'navigation__link')
-        }
-      >Evènements
-      </NavLink>
-    </nav>
-  );
+  if (userToken) {
+    return (
+      <nav className={isOpen ? 'navigation' : 'navigation-closed'}>
+        <NavLink
+          to="/profil"
+          className={
+            ({ isActive }) => (isActive ? 'navigation__link navigation__link--active' : 'navigation__link')
+          }
+        >Profil
+        </NavLink>
+        <NavLink
+          to="/association"
+          className={
+            ({ isActive }) => (isActive ? 'navigation__link navigation__link--active' : 'navigation__link')
+          }
+        >Association
+        </NavLink>
+        <NavLink
+          to="/events"
+          className={
+            ({ isActive }) => (isActive ? 'navigation__link navigation__link--active' : 'navigation__link')
+          }
+        >Evènements
+        </NavLink>
+      </nav>
+    );
+  }
 }
 export default Navigation;

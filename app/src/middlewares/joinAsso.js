@@ -7,7 +7,7 @@ import {
   JOIN_ASSO_API,
   changeJoinAssoField,
 } from '../actions/joinasso';
-import { saveUser } from '../actions/user';
+import { updateUser } from '../actions/user';
 
 const joinAssoMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -38,8 +38,8 @@ const joinAssoMiddleware = (store) => (next) => (action) => {
         })
         .then(
           (response) => {
-            console.log(response);
-            store.dispatch(saveUser(response.data));
+            console.log({ 'respnse ok ': response.data });
+            store.dispatch(updateUser(response.data));
           },
         ).catch(
           () => console.log('erreur join asso api'),

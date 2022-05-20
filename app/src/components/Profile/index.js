@@ -10,8 +10,9 @@ function Profile() {
   const currentUser = useSelector((state) => state.user.current.user);
   const currentUserRole = useSelector((state) => state.user.current.user.roles);
   // const userRole = currentUser.role;
-  const userAsso = currentUser.association_id;
+  const userAsso = currentUser.association;
   const assoMember = useSelector((state) => state.association.name);
+
   return (
     <div className="profil">
       <LogoProfile className="profil__logo" />

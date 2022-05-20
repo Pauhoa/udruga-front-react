@@ -1,11 +1,14 @@
+/* eslint-disable consistent-return */
 // import : npm
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 // import : Local
 import './header.scss';
 import { ReactComponent as Logo } from '../../assets/udruga-logo.svg';
 import { toggleMenu } from '../../actions/navigation';
+import { clearUser } from '../../actions/user';
 
 function Header() {
   const dispatch = useDispatch();
@@ -14,9 +17,21 @@ function Header() {
     dispatch(toggleMenu());
   }
 
+  function handleDeconnexionButton() {
+    dispatch(clearUser());
+  }
+
   const currentUser = useSelector((state) => state.user.current);
   const userToken = currentUser.token;
   console.log(userToken);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!userToken) {
+      return navigate('/');
+    }
+  }, [userToken]);
+
   return (
     <header className="header">
       {
@@ -49,6 +64,7 @@ function Header() {
             <button
               type="button"
               className="header__button header__button--connect"
+              onClick={handleDeconnexionButton}
             >
               Déconnexion
             </button>
