@@ -1,6 +1,7 @@
 // import : npm
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 // import : Local
 import './app.scss';
 
@@ -17,6 +18,7 @@ import Profile from '../Profile';
 import Team from '../Team';
 import CreateAsso from '../CreateAsso';
 import EventDetails from '../EventDetails';
+import Error from '../Error';
 
 function App() {
   const location = useLocation();
@@ -28,6 +30,7 @@ function App() {
     [location],
   );
 
+  const currentUserRole = useSelector((state) => state.user.current.user.roles);
   return (
     <div className="app">
       <Header />
@@ -35,14 +38,28 @@ function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<UserSettings />} />
-          <Route path="/profil" element={<Profile />} />
-          <Route path="/association" element={<Association />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/create-event" element={<CreateEvent />} />
           <Route path="/team" element={<Team />} />
-          <Route path="/create-asso" element={<CreateAsso />} />
-          <Route path="/event/:id" element={<EventDetails />} />
+          <Route path="/login" element={<UserSettings />} />
+          {
+            (currentUserRole[0] === 'ROLE_ADMIN' || currentUserRole[0] === 'ROLE_USER') && (
+              <>
+                <Route path="/profil" element={<Profile />} />
+                <Route path="/association" element={<Association />} />
+                <Route path="/events" element={<Events />} />
+                <Route path="/event/:id" element={<EventDetails />} />
+              </>
+            )
+          }
+          {
+            (currentUserRole[0] === 'ROLE_ADMIN') && (
+              <>
+                <Route path="/create-asso" element={<CreateAsso />} />
+                <Route path="/create-event" element={<CreateEvent />} />
+              </>
+            )
+
+          }
+          <Route path="*" element={<Error />} />
         </Routes>
       </main>
       <Footer />

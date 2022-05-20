@@ -39,9 +39,11 @@ const createAssoMiddleware = (store) => (next) => (action) => {
               },
             }).then((secondeResponse) => {
               store.dispatch(saveUser(secondeResponse.data));
+            }).catch(() => {
+              console.log('erreur appel api patch user');
             });
         }).catch(() => {
-          console.log('erreur appel api');
+          console.log('erreur appel api create asso');
         });
       next(action);
       break;
