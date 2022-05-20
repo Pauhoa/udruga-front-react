@@ -42,3 +42,20 @@ export const SIGNIN = 'SIGNIN';
 export const signin = () => ({
   type: SIGNIN,
 });
+
+// ACTION TYPE UPDATE_USER
+export const UPDATE_USER = 'UPDATE_USER';
+
+// ACTION CREATOR updateUser
+export const updateUser = (data) => ({
+  type: UPDATE_USER,
+  data,
+});
+
+// ACTION TYPE CLEAR_USER
+export const CLEAR_USER = 'CLEAR_USER';
+
+// ACTION CREATOR clearUser
+export const clearUser = () => ({
+  type: CLEAR_USER,
+});

@@ -1,6 +1,6 @@
 // import : npm
-import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, Navigate } from 'react-router-dom';
 // import : Local
 import { changeLoginField, changeSigninField } from '../../actions/user';
 
@@ -19,6 +19,10 @@ function UserSettings() {
     dispatch(changeSigninField(value, name));
   };
 
+  const userToken = useSelector((state) => state.user.current.token);
+  if (userToken) {
+    return <Navigate to="/" replace />;
+  }
   return (
     <div className="user__settings">
       <Login

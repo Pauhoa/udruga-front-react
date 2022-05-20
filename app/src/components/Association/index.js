@@ -14,7 +14,7 @@ import CreateAsso from '../CreateAsso';
 function Association() {
   const currentUser = useSelector((state) => state.user.current.user);
   const currentUserRole = useSelector((state) => state.user.current.user.roles);
-  const userAsso = currentUser.association_id;
+  const userAsso = currentUser.association;
 
   return (
     <div className="asso">
