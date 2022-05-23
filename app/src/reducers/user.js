@@ -3,11 +3,11 @@ import {
 } from '../actions/user';
 
 export const initialState = {
-  email: 'user@user.com',
-  password: 'user',
+  email: '',
+  password: '',
   current: {
     user: {
-      id: 1,
+      id: null,
       firstname: '',
       lastname: '',
       email: '',

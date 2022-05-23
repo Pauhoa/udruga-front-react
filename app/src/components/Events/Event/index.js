@@ -3,42 +3,38 @@ import '../events.scss';
 // import local
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
-// import { ReactComponent as Training } from '../../../assets/training.svg';
-// import { ReactComponent as Competition } from '../../../assets/competition.svg';
-// import { ReactComponent as Meeting } from '../../../assets/meeting.svg';
+import { ReactComponent as Training } from '../../../assets/training.svg';
+import { ReactComponent as Competition } from '../../../assets/competition.svg';
+import { ReactComponent as Meeting } from '../../../assets/meeting.svg';
 
 // npm
 
 function Event({
   type,
-  img,
   title,
   date,
   id,
 }) {
-  // let imageComponent = null;
-  // let typeParagraphe = null;
-  // switch (type) {
-  //   case 'meeting':
-  //     imageComponent = <Meeting className="event__image" />;
-  //     typeParagraphe = <p>Réunion</p>;
-  //     break;
-  //   case 'training':
-  //     imageComponent = <Training className="event__image" />;
-  //     typeParagraphe = <p>Entraînement</p>;
-  //     break;
-  //   case 'competition':
-  //     imageComponent = <Competition className="event__image" />;
-  //     typeParagraphe = <p>Compétition</p>;
-  //     break;
-  //   default:
-  //     return {
-  //       imageComponent,
-  //     };
+  let imageComponent = null;
+  switch (type) {
+    case 'Réunion':
+      imageComponent = <Meeting className="event__image" />;
+      break;
+    case 'Activité':
+      imageComponent = <Training className="event__image" />;
+      break;
+    case 'Formation':
+      imageComponent = <Competition className="event__image" />;
+      break;
+    default:
+      return {
+        imageComponent,
+      };
+  }
   return (
     <Link to={`/event/${id}`}>
       <div className="event">
-        <img className="event__image" src={img} alt="component" />
+        {imageComponent}
         <div className="event__info">
           <h2>{title}</h2>
           <p>{type}</p>
@@ -54,7 +50,6 @@ Event.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
-  img: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
 };
 

@@ -16,9 +16,12 @@
     width: 80%;
   }
 
-  .join > h2 {
+  h2 {
     color: vars.$first-color;
-    font-size: 3rem;
+    font-size: 2rem;
+    @media screen and (min-width: 768px) {
+      font-size: 3rem;
+    }
   }
 
   h3 {

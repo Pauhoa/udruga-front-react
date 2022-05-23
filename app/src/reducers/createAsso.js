@@ -1,10 +1,9 @@
 import { CHANGE_CREATEASSO_FIELD } from '../actions/createAsso';
 
 export const initialeState = {
-  id: 1,
-  assoName: 'coucou',
-  description: 'coucou 2',
-  siren: 'FBIOPENUP302938',
+  assoName: '',
+  description: '',
+  siren: '',
 };
 
 const reducer = (state = initialeState, action = {}) => {
