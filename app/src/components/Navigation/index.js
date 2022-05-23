@@ -1,13 +1,20 @@
 // import npm
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // styles
 import './navigation.scss';
+import { fetchEvents } from '../../actions/events';
+import { toggleLoading } from '../../actions/app';
 
 function Navigation() {
   const isOpen = useSelector((state) => state.navigation.isOpen);
   const userToken = useSelector((state) => state.user.current.token);
 
+  const dispatch = useDispatch();
+  const handleFetchEvents = () => {
+    dispatch(toggleLoading());
+    dispatch(fetchEvents());
+  };
   if (userToken) {
     return (
       <nav className={isOpen ? 'navigation' : 'navigation-closed'}>
@@ -30,6 +37,7 @@ function Navigation() {
           className={
             ({ isActive }) => (isActive ? 'navigation__link navigation__link--active' : 'navigation__link')
           }
+          onClick={handleFetchEvents}
         >Evènements
         </NavLink>
       </nav>

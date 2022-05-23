@@ -37,7 +37,6 @@ const joinAssoMiddleware = (store) => (next) => (action) => {
         })
         .then(
           (response) => {
-            console.log({ 'respnse ok ': response.data });
             store.dispatch(updateUser(response.data));
           },
         ).catch(

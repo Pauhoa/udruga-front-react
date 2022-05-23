@@ -2,7 +2,6 @@
 // import : npm
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 
 // import : Local
 import './header.scss';
@@ -17,21 +16,15 @@ function Header() {
     dispatch(toggleMenu());
   }
 
+  const navigate = useNavigate();
   function handleDeconnexionButton() {
     dispatch(clearUser());
     localStorage.clear();
+    return navigate('/');
   }
 
   const currentUser = useSelector((state) => state.user.current);
   const userToken = currentUser.token;
-  console.log(userToken);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!userToken) {
-      return navigate('/');
-    }
-  }, [userToken]);
 
   return (
     <header className="header">

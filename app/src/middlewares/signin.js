@@ -20,7 +20,6 @@ const signinMiddleware = (store) => (next) => (action) => {
       axios
         .post('http://charafcolo-server.eddi.cloud/projet-03-udruga-back/public/api/users', dataSignup)
         .then((response) => {
-          console.log(response.status);
           store.dispatch(saveUser(response.data));
         }).catch(() => {
           console.log('erreur appel api');

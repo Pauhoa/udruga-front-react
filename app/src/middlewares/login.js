@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { LOGIN, saveUser } from '../actions/user';
+import { toggleLoading } from '../actions/app';
 
 const loginMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -17,6 +18,7 @@ const loginMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           localStorage.setItem('user', JSON.stringify(response.data));
           store.dispatch(saveUser(response.data));
+          store.dispatch(toggleLoading());
         }).catch(() => {
           console.log('erreur appel api');
         });

@@ -1,6 +1,7 @@
 import Proptypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../../actions/user';
+import { toggleLoading } from '../../../actions/app';
 // styles
 import '../userSettings.scss';
 
@@ -15,6 +16,7 @@ function Login({
 
   function handleSubmit(evt) {
     evt.preventDefault();
+    dispatch(toggleLoading());
     dispatch(login());
   }
   const email = useSelector((state) => state.user.email);
