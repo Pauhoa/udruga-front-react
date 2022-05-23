@@ -5,11 +5,23 @@
   width: 100%;
   margin: 1em auto;
   text-align: center;
+  
   &-member {
+    position: relative;
+    padding: 1rem;
     width: 75%;
     margin:  0 auto;
     display: flex;
     flex-direction: column;
+    &:before{
+      content: "";
+      position: absolute;
+      left: 20%;
+      top: 0;
+      height: 1px;
+      width: 60%;
+      border-top: 2px vars.$fourth-color solid;
+    }
     @media screen and (min-width: 768px){
       width: 75%;
       flex-direction: row;
@@ -44,7 +56,7 @@
         flex-direction: row;
         justify-content: center;
         .link{
-          margin: 1em;
+          margin: 1em 0 0;
           width: 40px;
           &-linkedin{
             fill: #0A66C2;
@@ -54,14 +66,13 @@
     }
     
   }
-
-  
   h2, h3 {
     font-weight: bold;
     color: vars.$first-color;
   }
   h2 {
     font-size: 150%;
+    margin-bottom: 1rem;
   }
   h3 {
     font-size: 125%;
