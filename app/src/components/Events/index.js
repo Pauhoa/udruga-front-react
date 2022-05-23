@@ -7,12 +7,6 @@ import './events.scss';
 import Event from './Event';
 
 function Events() {
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(fetchEvents());
-  // }, [dispatch]);
-
   const events = useSelector((state) => state.events.events);
 
   return (
