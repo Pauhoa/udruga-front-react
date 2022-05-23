@@ -3,10 +3,10 @@ import {
   Routes, Route, useLocation,
 } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import : Local
 import './app.scss';
-
+import { saveUser } from '../../actions/user';
 // import : Components
 import Header from '../Header';
 import Navigation from '../Navigation';
@@ -30,6 +30,28 @@ function App() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     },
     [location],
+  );
+
+  const dispatch = useDispatch();
+
+  function loadFromLocalStorage() {
+    try {
+      const userFromLS = localStorage.getItem('user');
+      if (userFromLS === null) return undefined;
+      dispatch(saveUser(JSON.parse(userFromLS)));
+      return 'ok';
+    }
+    catch (e) {
+      console.warn(e);
+      return undefined;
+    }
+  }
+
+  useEffect(
+    () => {
+      loadFromLocalStorage();
+    },
+    [],
   );
 
   const currentUserRole = useSelector((state) => state.user.current.user.roles);
