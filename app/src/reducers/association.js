@@ -3,8 +3,8 @@ import { SAVE_ASSO } from '../actions/createAsso';
 const initialState = {
   id: 1,
   name: 'Basket Club',
-  siren: 'GIGN123',
-  description: 'la super asso',
+  siren: '',
+  description: '',
 };
 
 function reducer(state = initialState, action = {}) {
