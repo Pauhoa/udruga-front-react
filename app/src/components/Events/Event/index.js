@@ -15,7 +15,7 @@ function Event({
   date,
   id,
 }) {
-  let imageComponent = null;
+  let imageComponent;
   switch (type) {
     case 'Réunion':
       imageComponent = <Meeting className="event__image" />;
@@ -31,6 +31,7 @@ function Event({
         imageComponent,
       };
   }
+
   return (
     <Link to={`/event/${id}`}>
       <div className="event">
@@ -38,7 +39,7 @@ function Event({
         <div className="event__info">
           <h2>{title}</h2>
           <p>{type}</p>
-          <p>{`${(new Date(date)).toLocaleDateString('fr')} à ${(new Date(date)).toLocaleTimeString('fr')}`}</p>
+          <p>{`${(new Date(date)).toLocaleDateString('fr')}`}</p>
         </div>
       </div>
     </Link>
@@ -46,11 +47,10 @@ function Event({
 }
 
 Event.propTypes = {
-  // type: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
-  type: PropTypes.string.isRequired,
 };
 
 export default Event;

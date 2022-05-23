@@ -2,7 +2,7 @@ import { CHANGE_CREATEEVENT_FIELD } from '../actions/createEvent';
 
 export const initialeState = {
   eventName: '',
-  categories: '',
+  categories: 'Réunion',
   description: '',
   date: '',
 };

@@ -29,6 +29,7 @@ const createAssoMiddleware = (store) => (next) => (action) => {
           },
         }).then((response) => {
           store.dispatch(saveAsso(response.data));
+          console.log({ saveasso: response.data });
           axios
             .patch(`http://charafcolo-server.eddi.cloud/projet-03-udruga-back/public/api/users/edit/${id}`, {
               associationMember: response.data.id,
@@ -38,6 +39,7 @@ const createAssoMiddleware = (store) => (next) => (action) => {
               },
             }).then((secondeResponse) => {
               store.dispatch(saveUser(secondeResponse.data));
+              console.log({ saveUser: response.data });
             }).catch(() => {
               console.log('erreur appel api patch user');
             });

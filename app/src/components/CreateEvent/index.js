@@ -46,9 +46,9 @@ function CreateEvent() {
         id="categories"
         onChange={handleChange}
       >
-        <option value="meeting">Réunion</option>
-        <option value="training">Cours</option>
-        <option value="competition">Compétition</option>
+        <option value="Réunion">Réunion</option>
+        <option value="Activité">Cours</option>
+        <option value="Formation">Compétition</option>
       </select>
       <label htmlFor="description">Décrivez votre évènement</label>
       <textarea
@@ -60,7 +60,7 @@ function CreateEvent() {
       />
       <label htmlFor="date">Date de votre évènement</label>
       <input
-        type="datetime-local"
+        type="date"
         name="date"
         placeholder="Date de l'évènement"
         onChange={handleChange}

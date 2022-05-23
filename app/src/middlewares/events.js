@@ -21,11 +21,11 @@ const eventMiddleware = (store) => (next) => (action) => {
     case JOIN_EVENT:
     {
       const state = store.getState();
-      const { userId } = state.user.current.user;
+      const { id } = state.user.current.user;
 
       axios
-        .post(`http://charafcolo-server.eddi.cloud/projet-03-udruga-back/public/api/users/event/add/${action.eventId}`, {
-          users: userId,
+        .patch(`http://charafcolo-server.eddi.cloud/projet-03-udruga-back/public/api/users/event/add/${id}`, {
+          users: action.eventId,
         })
         .then(
           (response) => {

@@ -46,7 +46,7 @@ function EventDetails() {
       <h2>{theEvent.title}</h2>
       {imageComponent}
       <p>{theEvent.type}</p>
-      <p>{`Le ${(new Date(theEvent.date)).toLocaleDateString('fr')} à ${(new Date(theEvent.date)).toLocaleTimeString('fr')}`}</p>
+      <p>{`Le ${(new Date(theEvent.date)).toLocaleDateString('fr')}`}</p>
       <p>{theEvent.description}</p>
       <button
         type="button"
