@@ -20,7 +20,9 @@ function Profile() {
         <h2 className="profil__title">Profil</h2>
         <p>{currentUser.firstname}</p>
         <p>{currentUser.lastname}</p>
-        <p>{currentUserRole}</p>
+        <p>
+          {currentUserRole[0] === 'ROLE_USER' ? 'Adhérent' : 'Administrateur'}
+        </p>
         <p>{currentUser.email} </p>
         {/* <div className="profil__manage">
           <button type="button" className="profil__manage--button__modify">

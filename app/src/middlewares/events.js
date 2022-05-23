@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toggleLoading } from '../actions/app';
 
 import { FETCH_EVENTS, saveEvents, JOIN_EVENT } from '../actions/events';
 
@@ -9,8 +10,8 @@ const eventMiddleware = (store) => (next) => (action) => {
         .get('http://charafcolo-server.eddi.cloud/projet-03-udruga-back/public/api/events')
         .then(
           (response) => {
-            console.log(response.data);
             store.dispatch(saveEvents(response.data));
+            store.dispatch(toggleLoading());
           },
         ).catch(
           () => console.log('error events api'),

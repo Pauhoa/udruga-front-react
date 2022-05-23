@@ -21,6 +21,7 @@ import Team from '../Team';
 import CreateAsso from '../CreateAsso';
 import EventDetails from '../EventDetails';
 import Error from '../Error';
+import Loading from '../Loading';
 
 function App() {
   const location = useLocation();
@@ -54,37 +55,43 @@ function App() {
     [],
   );
 
+  const loading = useSelector((state) => state.app.loading);
+
   const currentUserRole = useSelector((state) => state.user.current.user.roles);
   return (
     <div className="app">
       <Header />
       <main className="main">
         <Navigation />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/login" element={<UserSettings />} />
-          {
-            (currentUserRole[0] === 'ROLE_ADMIN' || currentUserRole[0] === 'ROLE_USER') && (
-              <>
-                <Route path="/profil" element={<Profile />} />
-                <Route path="/association" element={<Association />} />
-                <Route path="/events" element={<Events />} />
-                <Route path="/event/:id" element={<EventDetails />} />
-              </>
-            )
-          }
-          {
-            (currentUserRole[0] === 'ROLE_ADMIN') && (
-              <>
-                <Route path="/create-asso" element={<CreateAsso />} />
-                <Route path="/create-event" element={<CreateEvent />} />
-              </>
-            )
+        {}
+        { loading ? <Loading />
+          : (
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="/login" element={<UserSettings />} />
+              {
+              (currentUserRole[0] === 'ROLE_ADMIN' || currentUserRole[0] === 'ROLE_USER') && (
+                <>
+                  <Route path="/profil" element={<Profile />} />
+                  <Route path="/association" element={<Association />} />
+                  <Route path="/events" element={<Events />} />
+                  <Route path="/event/:id" element={<EventDetails />} />
+                </>
+              )
+            }
+              {
+              (currentUserRole[0] === 'ROLE_ADMIN') && (
+                <>
+                  <Route path="/create-asso" element={<CreateAsso />} />
+                  <Route path="/create-event" element={<CreateEvent />} />
+                </>
+              )
 
-          }
-          <Route path="*" element={<Error />} />
-        </Routes>
+            }
+              <Route path="*" element={<Error />} />
+            </Routes>
+          )}
       </main>
       <Footer />
     </div>

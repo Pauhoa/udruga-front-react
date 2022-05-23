@@ -7,6 +7,7 @@ import navigationReducer from './navigation';
 import joinAssoReducer from './joinasso';
 import associationReducer from './association';
 import eventsReducer from './events';
+import appReducer from './app';
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   joinasso: joinAssoReducer,
   association: associationReducer,
   events: eventsReducer,
+  app: appReducer,
 });
 
 export default rootReducer;

@@ -29,7 +29,6 @@ const createAssoMiddleware = (store) => (next) => (action) => {
           },
         }).then((response) => {
           store.dispatch(saveAsso(response.data));
-          console.log(response.data);
           axios
             .patch(`http://charafcolo-server.eddi.cloud/projet-03-udruga-back/public/api/users/edit/${id}`, {
               associationMember: response.data.id,
