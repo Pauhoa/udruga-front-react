@@ -10,9 +10,12 @@ function EventDetails() {
 
   const idParam = useParams();
   const { id } = idParam;
-
   const events = useSelector((state) => state.events.events);
   const theEvent = events.find((event) => event.id === parseInt(id, 10));
+
+  function handleJoinEventButton() {
+    dispatch(joinEvent(id));
+  }
 
   if (!theEvent) {
     return <Navigate to="/error" replace />;
@@ -26,7 +29,7 @@ function EventDetails() {
       <p>{theEvent.description}</p>
       <button
         type="button"
-        onClick={dispatch(joinEvent(id))}
+        onClick={handleJoinEventButton}
       >S'inscrire
       </button>
 
