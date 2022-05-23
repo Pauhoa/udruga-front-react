@@ -30,7 +30,7 @@ function CreateEvent() {
       className="create-event__form"
       onSubmit={handleSubmit}
     >
-      Créer votre évènement
+      <h3>Créer votre évènement</h3>
       <label htmlFor="eventName">Choisissez un nom pour votre évènement</label>
       <input
         type="text"

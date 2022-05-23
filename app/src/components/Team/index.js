@@ -10,17 +10,17 @@ function Team() {
         <h2>L'équipe Front-End</h2>
         <div className="team-member">
           <div className="team-member__image">
-            <img src="https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&facialHairType=BeardMajestic&facialHairColor=Black&clotheType=Hoodie&clotheColor=Blue01&eyeType=Default&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Light" alt="member avatar" />
+            <img src="https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&facialHairType=BeardMajestic&facialHairColor=Black&clotheType=Hoodie&clotheColor=Red&eyeType=Wink&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light" alt="member avatar" />
           </div>
           <div className="team-member__infos">
             <h3>Paul Hoarau</h3>
             <p>Dévloppeur front-end, lead-dev front</p>
             <div className="links">
-              <a href="#">
-                <GithubSvg href="#" className="link link-github" />
+              <a href="https://github.com/Pauhoa">
+                <GithubSvg className="link link-github" />
               </a>
               <a href="https://www.linkedin.com/in/paulhoarau/">
-                <LinkedinSvg href="https://www.linkedin.com/in/paulhoarau/" className="link link-linkedin" />
+                <LinkedinSvg className="link link-linkedin" />
               </a>
             </div>
           </div>
@@ -46,11 +46,11 @@ function Team() {
         <h2>L'équipe Back-End</h2>
         <div className="team-member">
           <div className="team-member__image">
-            <img src="https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&facialHairType=BeardMajestic&facialHairColor=Black&clotheType=Hoodie&clotheColor=Blue01&eyeType=Default&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Light" alt="member avatar" />
+            <img src="https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortWaved&accessoriesType=Blank&hairColor=BrownDark&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=Hoodie&clotheColor=PastelRed&eyeType=Happy&eyebrowType=Default&mouthType=Default&skinColor=Light" alt="member avatar" />
           </div>
           <div className="team-member__infos">
-            <h3>Nom prénom</h3>
-            <p>Courte description</p>
+            <h3>Wahib Jouidir</h3>
+            <p>Développeur back-end, git master</p>
             <div className="links">
               <a href="#">
                 <GithubSvg href="#" className="link link-github" />

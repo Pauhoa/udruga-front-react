@@ -1,9 +1,10 @@
 @use 'src/styles/vars';
 
 .create-asso__form {
+  min-height: 90vh;
   height: fit-content;
-  width: 75%;
-  margin: 1em auto;
+  width: 80%;
+  margin: 2rem auto;
   padding: 1em;
   border-radius: 8px;
   display: flex;
@@ -21,6 +22,7 @@
   }
   input, button, select, textarea{
     font-family: 'Raleway';
+    font-size: 1rem;
     margin-top: 1.5em;
     border: none;
     width: 90%;

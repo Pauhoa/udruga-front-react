@@ -14,10 +14,11 @@
 }
 margin: auto;
 &__logo{
+  fill: vars.$first-color;
   align-self: center;
-    height: 80px;
-    width: 95px;
-    margin: 1em;
+  height: 80px;
+  width: 95px;
+  margin: 1em;
 }
 
 &__section, &__events--section {
