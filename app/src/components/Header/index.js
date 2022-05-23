@@ -19,6 +19,7 @@ function Header() {
 
   function handleDeconnexionButton() {
     dispatch(clearUser());
+    localStorage.clear();
   }
 
   const currentUser = useSelector((state) => state.user.current);

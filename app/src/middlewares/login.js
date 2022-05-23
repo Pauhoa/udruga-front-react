@@ -15,8 +15,7 @@ const loginMiddleware = (store) => (next) => (action) => {
       axios
         .post('http://charafcolo-server.eddi.cloud/projet-03-udruga-back/public/api/login_check', dataLogin)
         .then((response) => {
-          console.log(response.status);
-          console.log(response.data);
+          localStorage.setItem('user', JSON.stringify(response.data));
           store.dispatch(saveUser(response.data));
         }).catch(() => {
           console.log('erreur appel api');

@@ -19,7 +19,7 @@ function Footer() {
         Mentions Légales
       </NavLink>
       <NavLink
-        to="/terms-of-service"
+        to="/terms-of-servicii"
         className={
           ({ isActive }) => (isActive ? 'footer__link footer__link--active' : 'footer__link')
         }
