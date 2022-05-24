@@ -47,8 +47,8 @@ function CreateEvent() {
         onChange={handleChange}
       >
         <option value="Réunion">Réunion</option>
-        <option value="Activité">Cours</option>
-        <option value="Formation">Compétition</option>
+        <option value="Activité">Activité</option>
+        <option value="Formation">Formation</option>
       </select>
       <label htmlFor="description">Décrivez votre évènement</label>
       <textarea
