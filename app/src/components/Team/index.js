@@ -51,48 +51,32 @@ function Team() {
           <div className="team-member__infos">
             <h3>Wahib Jouidir</h3>
             <p>Développeur back-end, git master</p>
+          </div>
+        </div>
+        <div className="team-member">
+          <div className="team-member__image">
+            <img src="https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads01&accessoriesType=Round&hairColor=Black&facialHairType=BeardLight&facialHairColor=Black&clotheType=Hoodie&clotheColor=PastelOrange&eyeType=Happy&eyebrowType=Default&mouthType=Default&skinColor=Black" alt="member avatar" />
+          </div>
+          <div className="team-member__infos">
+            <h3>Charaf Colo</h3>
+            <p>Dévoloppeur back-end, lead-dev back</p>
             <div className="links">
-              <a href="#">
-                <GithubSvg href="#" className="link link-github" />
+              <a href="https://github.com/charafcolo">
+                <GithubSvg className="link link-github" />
               </a>
-              <a href="https://www.linkedin.com/in/paulhoarau/">
-                <LinkedinSvg href="https://www.linkedin.com/in/paulhoarau/" className="link link-linkedin" />
+              <a href="https://www.linkedin.com/in/charaf-colo-50a787199/">
+                <LinkedinSvg className="link link-linkedin" />
               </a>
             </div>
           </div>
         </div>
         <div className="team-member">
           <div className="team-member__image">
-            <img src="https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&facialHairType=BeardMajestic&facialHairColor=Black&clotheType=Hoodie&clotheColor=Blue01&eyeType=Default&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Light" alt="member avatar" />
+            <img src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairTheCaesar&accessoriesType=Blank&hairColor=BrownDark&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Heather&eyeType=Default&eyebrowType=Default&mouthType=Twinkle&skinColor=Light" alt="member avatar" />
           </div>
           <div className="team-member__infos">
-            <h3>Nom prénom</h3>
-            <p>Courte description</p>
-            <div className="links">
-              <a href="#">
-                <GithubSvg href="#" className="link link-github" />
-              </a>
-              <a href="https://www.linkedin.com/in/paulhoarau/">
-                <LinkedinSvg href="https://www.linkedin.com/in/paulhoarau/" className="link link-linkedin" />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="team-member">
-          <div className="team-member__image">
-            <img src="https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&facialHairType=BeardMajestic&facialHairColor=Black&clotheType=Hoodie&clotheColor=Blue01&eyeType=Default&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Light" alt="member avatar" />
-          </div>
-          <div className="team-member__infos">
-            <h3>Nom prénom</h3>
-            <p>Courte description</p>
-            <div className="links">
-              <a href="#">
-                <GithubSvg href="#" className="link link-github" />
-              </a>
-              <a href="https://www.linkedin.com/in/paulhoarau/">
-                <LinkedinSvg href="https://www.linkedin.com/in/paulhoarau/" className="link link-linkedin" />
-              </a>
-            </div>
+            <h3>Eddy Gavigniaux</h3>
+            <p>Développeur back-end</p>
           </div>
         </div>
       </div>

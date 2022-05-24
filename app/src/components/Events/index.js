@@ -1,6 +1,5 @@
 // import { useEffect } from 'react';
 import { /* useDispatch */ useSelector } from 'react-redux';
-// import { fetchEvents } from '../../actions/events';
 // styles
 import './events.scss';
 
