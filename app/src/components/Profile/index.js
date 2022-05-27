@@ -35,10 +35,10 @@ function Profile() {
       </div>
       {
         (currentUserRole[0] === 'ROLE_USER')
-        && (!userAsso)
+        && (!userAsso.id)
         && (<JoinAsso />)
       }
-      {userAsso && <p>Votre association : {assoMember}</p>}
+      {userAsso.id && <p>Votre association : {assoMember}</p>}
       { (currentUserRole[0] === 'ROLE_ADMIN') && (
         <Link to="/create-asso">
           <button type="button">Créer une association</button>
